@@ -1,0 +1,21 @@
+        <p>
+            <strong>Dias</strong>
+            <%= schedule.days %>
+        </p>
+
+        <p>
+            <strong>Apertura:</strong>
+            <%= schedule.start_at.strftime('%H:%M') %>
+        </p>
+
+        <p>
+            <strong>Cierre:</strong>
+            <%= schedule.end_at.strftime('%H:%M') %>
+        </p>
+
+        <p>
+        <%= link_to "Eliminar", [schedule.office, schedule], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Esta seguro?"
+                } %>
+        </p>

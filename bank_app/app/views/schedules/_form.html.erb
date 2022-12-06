@@ -1,0 +1,17 @@
+<%= form_with model: [ @office, @office.schedules.build ] do |form| %>
+   <p>
+    <%= form.label value="Dias separados por comas ','" %><br>
+    <%= form.text_field :days %>
+  </p>
+  <p>
+    <%= form.label value="Apertura" %><br>
+    <%= form.time_field :start_at %>
+  </p>
+  <p>
+    <%= form.label value="Cierre" %><br>
+    <%= form.time_field :end_at %>
+  </p>
+  <p>
+    <%= form.submit value="Enviar" %>
+  </p>
+<% end %>

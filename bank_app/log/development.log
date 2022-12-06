@@ -1,0 +1,2648 @@
+Started GET "/" for 127.0.0.1 at 2022-11-21 12:57:53 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/agcastro1994/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/agcastro1994/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | Allocations: 634)
+Completed 200 OK in 7ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 5095)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-21 13:09:35 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/agcastro1994/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/agcastro1994/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | Allocations: 526)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 3770)
+
+
+Started GET "/office" for 127.0.0.1 at 2022-11-21 13:09:42 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/office"):
+  
+Started GET "/offices" for 127.0.0.1 at 2022-11-21 13:09:55 -0300
+Processing by OfficeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering office/index.html.erb within layouts/application
+  Rendered office/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 122)
+  Rendered layout layouts/application.html.erb (Duration: 129.7ms | Allocations: 92454)
+Completed 200 OK in 131ms (Views: 130.6ms | ActiveRecord: 0.0ms | Allocations: 93455)
+
+
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOffices (20221121161516)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "offices" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "address" text, "phone" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221121161516"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-11-21 16:18:13.207081"], ["updated_at", "2022-11-21 16:18:13.207081"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOffice Create (0.2ms)[0m  [1m[32mINSERT INTO "offices" ("name", "address", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Central"], ["address", "La Plata Centro"], ["phone", "123654789"], ["created_at", "2022-11-21 16:20:37.587351"], ["updated_at", "2022-11-21 16:20:37.587351"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/offices" for 127.0.0.1 at 2022-11-21 13:23:50 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering office/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/office/index.html.erb:4
+  Rendered office/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 11939)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 12049)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms | Allocations: 16114)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Office id: 1, name: "Central", address: "La Plata Centro", phone: "123654789", created_at: "2022-11-21 16:20:37.587351000 +0000", updated_at: "2022-11-21 16:20:37.587351000 +0000">):
+    3: <ul>
+    4:   <% @offices.each do |office| %>
+    5:     <li>
+    6:       <%= office.title %>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/office/index.html.erb:6
+app/views/office/index.html.erb:4
+Started GET "/offices" for 127.0.0.1 at 2022-11-21 13:24:46 -0300
+Processing by OfficeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering office/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/office/index.html.erb:4
+  Rendered office/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 841)
+  Rendered layout layouts/application.html.erb (Duration: 42.2ms | Allocations: 36203)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.1ms | Allocations: 37104)
+
+
+Started GET "/offices" for 127.0.0.1 at 2022-11-21 13:32:13 -0300
+Processing by OfficeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering office/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/office/index.html.erb:4
+  Rendered office/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2468)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 16836)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.3ms | Allocations: 18462)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 13:32:17 -0300
+Processing by OfficeController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/office_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering office/show.html.erb within layouts/application
+  Rendered office/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 190)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2726)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 5457)
+
+
+Started GET "/offices" for 127.0.0.1 at 2022-11-21 13:33:21 -0300
+Processing by OfficeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering office/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/office/index.html.erb:4
+  Rendered office/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 850)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3662)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 4494)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 13:33:22 -0300
+Processing by OfficeController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/office_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering office/show.html.erb within layouts/application
+  Rendered office/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 148)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2486)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 3330)
+
+
+Started GET "/offices" for 127.0.0.1 at 2022-11-21 13:34:11 -0300
+Processing by OfficeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering office/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/office/index.html.erb:4
+  Rendered office/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 848)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3663)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 4490)
+
+
+Started GET "/offices" for 127.0.0.1 at 2022-11-21 13:37:15 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant OfficesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  OfficeController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/offices" for 127.0.0.1 at 2022-11-21 13:38:10 -0300
+Processing by OfficesController#index as HTML
+Completed 406 Not Acceptable in 3ms (Allocations: 2688)
+
+
+  
+ActionController::MissingExactTemplate (OfficesController#index is missing a template for request formats: text/html):
+  
+actionpack (7.0.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.4) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/offices" for 127.0.0.1 at 2022-11-21 13:38:26 -0300
+Processing by OfficesController#index as HTML
+Completed 406 Not Acceptable in 1ms (Allocations: 548)
+
+
+  
+ActionController::MissingExactTemplate (OfficesController#index is missing a template for request formats: text/html):
+  
+actionpack (7.0.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.4) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/office" for 127.0.0.1 at 2022-11-21 13:38:29 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/office"):
+  
+Started GET "/offices/" for 127.0.0.1 at 2022-11-21 13:38:39 -0300
+Processing by OfficesController#index as HTML
+Completed 406 Not Acceptable in 0ms (Allocations: 541)
+
+
+  
+ActionController::MissingExactTemplate (OfficesController#index is missing a template for request formats: text/html):
+  
+actionpack (7.0.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.4) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/offices/" for 127.0.0.1 at 2022-11-21 13:39:36 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 6036)
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 41783)
+Completed 200 OK in 47ms (Views: 43.4ms | ActiveRecord: 0.4ms | Allocations: 45909)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 13:39:40 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  Rendered offices/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 193)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2729)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 5522)
+
+
+Started GET "/offices/" for 127.0.0.1 at 2022-11-21 13:40:30 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 6231)
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 41796)
+Completed 200 OK in 46ms (Views: 42.6ms | ActiveRecord: 0.4ms | Allocations: 45921)
+
+
+Started GET "/offices/" for 127.0.0.1 at 2022-11-21 13:40:32 -0300
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 706)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3231)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 3575)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 13:40:32 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.5ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  Rendered offices/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 2724)
+Completed 200 OK in 19ms (Views: 10.9ms | ActiveRecord: 0.5ms | Allocations: 5499)
+
+
+Started GET "/offices/new" for 127.0.0.1 at 2022-11-21 13:48:27 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 5513)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 40144)
+Completed 200 OK in 50ms (Views: 34.8ms | ActiveRecord: 0.3ms | Allocations: 49081)
+
+
+Started POST "/offices" for 127.0.0.1 at 2022-11-21 13:49:01 -0300
+Processing by OfficesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "office"=>{"name"=>"Calle 45", "address"=>"Calle 45 entre 8 y 9 , La Plata", "phone"=>"2213245698"}, "commit"=>"Create Office"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/offices_controller.rb:17:in `create'
+  [1m[36mOffice Create (0.2ms)[0m  [1m[32mINSERT INTO "offices" ("name", "address", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Calle 45"], ["address", "Calle 45 entre 8 y 9 , La Plata"], ["phone", "2213245698"], ["created_at", "2022-11-21 16:49:01.971793"], ["updated_at", "2022-11-21 16:49:01.971793"]]
+  ↳ app/controllers/offices_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/offices_controller.rb:17:in `create'
+Redirected to http://localhost:3000/offices/2
+Completed 302 Found in 5ms (ActiveRecord: 1.8ms | Allocations: 3824)
+
+
+Started GET "/offices/2" for 127.0.0.1 at 2022-11-21 13:49:01 -0300
+Processing by OfficesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  Rendered offices/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 2740)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 5580)
+
+
+Started GET "/offices" for 127.0.0.1 at 2022-11-21 13:49:06 -0300
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.4ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 916)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3295)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.4ms | Allocations: 3636)
+
+
+Started GET "/offices" for 127.0.0.1 at 2022-11-21 13:53:56 -0300
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 980)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3771)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 4595)
+
+
+Started GET "/offices/new" for 127.0.0.1 at 2022-11-21 13:53:58 -0300
+Processing by OfficesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1422)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3604)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3957)
+
+
+Started GET "/offices/new" for 127.0.0.1 at 2022-11-21 13:53:59 -0300
+Processing by OfficesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1069)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3252)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3533)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 13:54:09 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  Rendered offices/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2988)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 4302)
+
+
+Started GET "/offices/new" for 127.0.0.1 at 2022-11-21 13:54:14 -0300
+Processing by OfficesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1438)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 3622)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 3984)
+
+
+Started GET "/offices/new" for 127.0.0.1 at 2022-11-21 13:55:00 -0300
+Processing by OfficesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1672)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 4226)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 5063)
+
+
+Started GET "/offices/new" for 127.0.0.1 at 2022-11-21 13:57:17 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 3779)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 39101)
+Completed 200 OK in 49ms (Views: 33.2ms | ActiveRecord: 0.3ms | Allocations: 48314)
+
+
+Started POST "/offices" for 127.0.0.1 at 2022-11-21 13:57:18 -0300
+Processing by OfficesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "office"=>{"name"=>"", "address"=>"", "phone"=>""}, "commit"=>"Crear Sucursal"}
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2403)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 4679)
+Completed 422 Unprocessable Entity in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 6312)
+
+
+Started GET "/offices/new" for 127.0.0.1 at 2022-11-21 13:59:23 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3950)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 39236)
+Completed 200 OK in 48ms (Views: 33.2ms | ActiveRecord: 0.3ms | Allocations: 48416)
+
+
+Started POST "/offices" for 127.0.0.1 at 2022-11-21 13:59:24 -0300
+Processing by OfficesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "office"=>{"name"=>"", "address"=>"", "phone"=>""}, "commit"=>"Crear Sucursal"}
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 3951)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 6227)
+Completed 422 Unprocessable Entity in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 7875)
+
+
+Started GET "/offices/new" for 127.0.0.1 at 2022-11-21 14:01:01 -0300
+Processing by OfficesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1745)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4300)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 5171)
+
+
+Started GET "/offices/" for 127.0.0.1 at 2022-11-21 14:01:05 -0300
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.3ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3466)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 3888)
+
+
+Started GET "/offices/new" for 127.0.0.1 at 2022-11-21 14:01:07 -0300
+Processing by OfficesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1081)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 3263)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 3542)
+
+
+Started GET "/offices/" for 127.0.0.1 at 2022-11-21 14:07:05 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 6329)
+  Rendered layout layouts/application.html.erb (Duration: 35.2ms | Allocations: 42002)
+Completed 200 OK in 47ms (Views: 36.4ms | ActiveRecord: 0.4ms | Allocations: 46371)
+
+
+Started GET "/offices/new" for 127.0.0.1 at 2022-11-21 14:07:09 -0300
+Processing by OfficesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/_form.html.erb (Duration: 3.4ms | Allocations: 3406)
+  Rendered offices/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3703)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 5997)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 6473)
+
+
+Started GET "/offices/new" for 127.0.0.1 at 2022-11-21 14:08:07 -0300
+Processing by OfficesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/_form.html.erb (Duration: 1.5ms | Allocations: 1706)
+  Rendered offices/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1976)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 4528)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 5433)
+
+
+Started GET "/offices/" for 127.0.0.1 at 2022-11-21 14:08:12 -0300
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 944)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3295)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 3652)
+
+
+Started GET "/offices/2" for 127.0.0.1 at 2022-11-21 14:08:13 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  Rendered offices/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 288)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2806)
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 9391)
+
+
+Started GET "/offices/2/edit" for 127.0.0.1 at 2022-11-21 14:08:14 -0300
+Processing by OfficesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/edit.html.erb within layouts/application
+  Rendered offices/_form.html.erb (Duration: 1.1ms | Allocations: 1269)
+  Rendered offices/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1442)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3616)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 4413)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-21 14:45:18 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 6329)
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 41982)
+Completed 200 OK in 49ms (Views: 36.1ms | ActiveRecord: 0.3ms | Allocations: 46351)
+
+
+Started GET "/offices/new" for 127.0.0.1 at 2022-11-21 14:47:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/_form.html.erb (Duration: 5.1ms | Allocations: 3710)
+  Rendered offices/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 4256)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 39590)
+Completed 200 OK in 49ms (Views: 34.3ms | ActiveRecord: 0.3ms | Allocations: 48768)
+
+
+Started POST "/offices" for 127.0.0.1 at 2022-11-21 14:47:39 -0300
+Processing by OfficesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "office"=>{"name"=>"destruir", "address"=>"destruir", "phone"=>"1234567890"}, "commit"=>"Crear Sucursal"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/offices_controller.rb:17:in `create'
+  [1m[36mOffice Create (0.2ms)[0m  [1m[32mINSERT INTO "offices" ("name", "address", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "destruir"], ["address", "destruir"], ["phone", "1234567890"], ["created_at", "2022-11-21 17:47:39.498361"], ["updated_at", "2022-11-21 17:47:39.498361"]]
+  ↳ app/controllers/offices_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/offices_controller.rb:17:in `create'
+Redirected to http://localhost:3000/offices/3
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms | Allocations: 3915)
+
+
+Started GET "/offices/3" for 127.0.0.1 at 2022-11-21 14:47:39 -0300
+Processing by OfficesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  Rendered offices/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 394)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2900)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 5736)
+
+
+Started DELETE "/offices/3" for 127.0.0.1 at 2022-11-21 14:47:45 -0300
+Processing by OfficesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/offices_controller.rb:40:in `destroy'
+  [1m[36mOffice Destroy (0.1ms)[0m  [1m[31mDELETE FROM "offices" WHERE "offices"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/offices_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/offices_controller.rb:40:in `destroy'
+Redirected to http://localhost:3000/offices
+Completed 303 See Other in 5ms (ActiveRecord: 2.1ms | Allocations: 2459)
+
+
+Started GET "/offices" for 127.0.0.1 at 2022-11-21 14:47:45 -0300
+Processing by OfficesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 932)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3289)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 3623)
+
+
+Started GET "/offices/2" for 127.0.0.1 at 2022-11-21 14:47:59 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  Rendered offices/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 111)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 2463)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 3206)
+
+
+Started GET "/offices/2" for 127.0.0.1 at 2022-11-21 14:48:20 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  Rendered offices/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 377)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 3150)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 4440)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSchedules (20221121180711)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schedules" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "days" varchar, "start_at" datetime(6), "end_at" datetime(6), "office_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_a4e3c64dab"
+FOREIGN KEY ("office_id")
+  REFERENCES "offices" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_schedules_on_office_id" ON "schedules" ("office_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221121180711"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/offices" for 127.0.0.1 at 2022-11-21 15:22:30 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 5854)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 41569)
+Completed 200 OK in 48ms (Views: 34.9ms | ActiveRecord: 0.4ms | Allocations: 47324)
+
+
+Started GET "/offices" for 127.0.0.1 at 2022-11-21 15:22:32 -0300
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 781)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 3303)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 3647)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:22:34 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:16
+  Rendered offices/show.html.erb within layouts/application (Duration: 15.2ms | Allocations: 13827)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 13921)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms | Allocations: 16689)
+
+
+  
+ActionView::Template::Error (undefined method `schedule' for #<Office id: 1, name: "Central", address: "La Plata Centro", phone: "123654789", created_at: "2022-11-21 16:20:37.587351000 +0000", updated_at: "2022-11-21 16:20:37.587351000 +0000">
+Did you mean?  schedules
+               schedules=):
+    32: 
+    33: 
+    34: <h3>Agregar horarios:</h3>
+    35: <%= form_with model: [ @office, @office.schedule.build ] do |form| %>
+    36:   <p>
+    37:     <%= form.label value="Dias separados por comas ','" %><br>
+    38:     <%= form.text_field :days %>
+  
+app/views/offices/show.html.erb:35
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:23:18 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:16
+  Rendered offices/show.html.erb within layouts/application (Duration: 15.5ms | Allocations: 15169)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 17773)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.3ms | Allocations: 19163)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:25:23 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  Rendered offices/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1454)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | Allocations: 1543)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 2920)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1> <%= @office.name %> </h1>
+
+<span> <%= @office.address %> </span>
+
+<span> <%= @office.phone %> </span>
+
+
+<ul>
+  <li><%= link_to "Editar", edit_office_path(@office) %></li>
+   <li><%= link_to "Eliminar", office_path(@office), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Esta seguro?"
+                  } %></li>
+
+<h3>Horarios</h3>
+<% if @office.schedules %>
+    <% @office.schedules.each do |schedule| %>
+        <p>
+            <strong>Dias</strong>
+            <%= schedule.days %>
+        </p>
+
+        <p>
+            <strong>Apertura:</strong>
+            <%= schedule.start_at %>
+        </p>
+
+        <p>
+            <strong>Cierre:</strong>
+            <%= schedule.end_at %>
+        </p>
+    <% end %>
+<% else %>
+        <p>
+            <strong>No hay horiarios para esta sucursal</strong>            
+        </p>
+
+
+<h3>Agregar horarios:</h3>
+<%= form_with model: [ @office, @office.schedules.build ] do |form| %>
+  <p>
+    <%= form.label value="Dias separados por comas ','" %><br>
+    <%= form.text_field :days %>
+  </p>
+  <p>
+    <%= form.label value="Apertura" %><br>
+    <%= form.time_field :start_at %>
+  </p>
+  <p>
+    <%= form.label value="Cierre" %><br>
+    <%= form.time_field :end_at %>
+  </p>
+  <p>
+    <%= form.submit value="Agregar horario" %>
+  </p>
+<% end %>
+</ul>
+):
+1:    <h1> <%= @office.name %> </h1>
+2:    
+3:    <span> <%= @office.address %> </span>
+4:    
+5:    <span> <%= @office.phone %> </span>
+6:    
+7:    
+8:    <ul>
+9:      <li><%= link_to "Editar", edit_office_path(@office) %></li>
+10:       <li><%= link_to "Eliminar", office_path(@office), data: {
+11:                        turbo_method: :delete,
+12:                        turbo_confirm: "Esta seguro?"
+13:                      } %></li>
+14:    
+15:    <h3>Horarios</h3>
+16:    <% if @office.schedules %>
+17:        <% @office.schedules.each do |schedule| %>
+18:            <p>
+19:                <strong>Dias</strong>
+20:                <%= schedule.days %>
+21:            </p>
+22:    
+23:            <p>
+24:                <strong>Apertura:</strong>
+25:                <%= schedule.start_at %>
+26:            </p>
+27:    
+28:            <p>
+29:                <strong>Cierre:</strong>
+30:                <%= schedule.end_at %>
+31:            </p>
+32:        <% end %>
+33:    <% else %>
+34:            <p>
+35:                <strong>No hay horiarios para esta sucursal</strong>            
+36:            </p>
+37:    
+38:    
+39:    <h3>Agregar horarios:</h3>
+40:    <%= form_with model: [ @office, @office.schedules.build ] do |form| %>
+41:      <p>
+42:        <%= form.label value="Dias separados por comas ','" %><br>
+43:        <%= form.text_field :days %>
+44:      </p>
+45:      <p>
+46:        <%= form.label value="Apertura" %><br>
+47:        <%= form.time_field :start_at %>
+48:      </p>
+49:      <p>
+50:        <%= form.label value="Cierre" %><br>
+51:        <%= form.time_field :end_at %>
+52:      </p>
+53:      <p>
+54:        <%= form.submit value="Agregar horario" %>
+55:      </p>
+56:    <% end %>
+57:    </ul>
+  
+app/views/offices/show.html.erb:59: syntax error, unexpected end-of-input, expecting `end'
+app/views/offices/show.html.erb:59: syntax error, unexpected end-of-input, expecting `end'
+app/views/offices/show.html.erb:59: syntax error, unexpected end-of-input, expecting `end'
+app/views/offices/show.html.erb:59: syntax error, unexpected end-of-input, expecting `end'
+app/views/offices/show.html.erb:59: syntax error, unexpected end-of-input, expecting `end'
+app/views/offices/show.html.erb:59: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:26:11 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:18
+  Rendered offices/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2840)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5393)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 6742)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:26:46 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ? /* loading for inspect */ LIMIT ?[0m  [["office_id", 1], ["LIMIT", 11]]
+  Rendered offices/show.html.erb within layouts/application (Duration: 8.9ms | Allocations: 5900)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 5985)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.4ms | Allocations: 7269)
+
+
+  
+ActionView::Template::Error (undefined method `isBlank' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  blank?):
+    14: </ul>
+    15: 
+    16: <h3>Horarios</h3>
+    17: <% if @office.schedules.isBlank() %>
+    18:     <% @office.schedules.each do |schedule| %>
+    19:         <p>
+    20:             <strong>Dias</strong>
+  
+app/views/offices/show.html.erb:17
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:27:34 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2816)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 5369)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 6681)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:27:46 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2809)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 5347)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.2ms | Allocations: 6661)
+
+
+Started POST "/offices/1/schedules" for 127.0.0.1 at 2022-11-21 15:28:19 -0300
+Processing by SchedulesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "schedule"=>{"days"=>"Lunes,Miercoles", "start_at"=>"10:00", "end_at"=>"17:00"}, "commit"=>"Agregar horario", "office_id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2822)
+
+
+  
+NameError (uninitialized constant SchedulesController::Article
+
+        @office = Article.find(params[:office_id])
+                  ^^^^^^^):
+  
+app/controllers/schedules_controller.rb:3:in `create'
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:28:54 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 7053)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 20966)
+Completed 200 OK in 19ms (Views: 13.9ms | ActiveRecord: 0.7ms | Allocations: 26024)
+
+
+Started POST "/offices/1/schedules" for 127.0.0.1 at 2022-11-21 15:28:57 -0300
+Processing by SchedulesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "schedule"=>{"days"=>"Lunes,Miercoles", "start_at"=>"10:00", "end_at"=>"17:00"}, "commit"=>"Agregar horario", "office_id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schedules_controller.rb:4:in `create'
+  [1m[36mSchedule Create (0.1ms)[0m  [1m[32mINSERT INTO "schedules" ("days", "start_at", "end_at", "office_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["days", "Lunes,Miercoles"], ["start_at", "2022-11-21 10:00:00"], ["end_at", "2022-11-21 17:00:00"], ["office_id", 1], ["created_at", "2022-11-21 18:28:57.169739"], ["updated_at", "2022-11-21 18:28:57.169739"]]
+  ↳ app/controllers/schedules_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/schedules_controller.rb:4:in `create'
+Redirected to http://localhost:3000/offices/1
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms | Allocations: 4753)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:28:57 -0300
+Processing by OfficesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.0ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.0ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2115)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4386)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 5202)
+
+
+Started POST "/offices/1/schedules" for 127.0.0.1 at 2022-11-21 15:30:56 -0300
+Processing by SchedulesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "schedule"=>{"days"=>"Martes,Jueves", "start_at"=>"09:00", "end_at"=>"15:00"}, "commit"=>"Agregar horario", "office_id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms | Allocations: 7795)
+
+
+  
+NoMethodError (undefined method `put' for #<SchedulesController:0x00000000016620>
+
+        put schedule_params
+        ^^^
+Did you mean?  putc
+               puts):
+  
+app/controllers/schedules_controller.rb:4:in `create'
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:31:05 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 7176)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 21089)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 0.7ms | Allocations: 26141)
+
+
+Started POST "/offices/1/schedules" for 127.0.0.1 at 2022-11-21 15:31:07 -0300
+Processing by SchedulesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "schedule"=>{"days"=>"Lunes,Miercoles", "start_at"=>"10:00", "end_at"=>"17:00"}, "commit"=>"Agregar horario", "office_id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schedules_controller.rb:5:in `create'
+  [1m[36mSchedule Create (0.1ms)[0m  [1m[32mINSERT INTO "schedules" ("days", "start_at", "end_at", "office_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["days", "Lunes,Miercoles"], ["start_at", "2022-11-21 10:00:00"], ["end_at", "2022-11-21 17:00:00"], ["office_id", 1], ["created_at", "2022-11-21 18:31:07.597898"], ["updated_at", "2022-11-21 18:31:07.597898"]]
+  ↳ app/controllers/schedules_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/schedules_controller.rb:5:in `create'
+Redirected to http://localhost:3000/offices/1
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms | Allocations: 3752)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:31:07 -0300
+Processing by OfficesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.0ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2160)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4441)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.1ms | Allocations: 5214)
+
+
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+Started GET "/" for 127.0.0.1 at 2022-11-21 15:37:32 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 5855)
+  Rendered layout layouts/application.html.erb (Duration: 35.8ms | Allocations: 41564)
+Completed 200 OK in 50ms (Views: 37.0ms | ActiveRecord: 0.4ms | Allocations: 47057)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:37:34 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 12.0ms | Allocations: 18624)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 18718)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms | Allocations: 21508)
+
+
+  
+ActionView::Template::Error (undefined method `hours' for Mon, 21 Nov 2022 10:00:00.000000000 UTC +00:00:ActiveSupport::TimeWithZone
+
+      wrap_with_time_zone time.__send__(sym, *args, &block)
+                              ^^^^^^^^^
+Did you mean?  hour):
+    23: 
+    24:         <p>
+    25:             <strong>Apertura:</strong>
+    26:             <%= schedule.start_at.hours %>
+    27:         </p>
+    28: 
+    29:         <p>
+  
+app/views/offices/show.html.erb:26
+app/views/offices/show.html.erb:18
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:37:45 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.0ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 9.4ms | Allocations: 10335)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 12939)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.1ms | Allocations: 14329)
+
+
+Started POST "/offices/1/schedules" for 127.0.0.1 at 2022-11-21 15:40:50 -0300
+Processing by SchedulesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "schedule"=>{"days"=>"Sabaduki", "start_at"=>"09:30", "end_at"=>"13:30"}, "commit"=>"Agregar horario", "office_id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schedules_controller.rb:4:in `create'
+  [1m[36mSchedule Create (0.2ms)[0m  [1m[32mINSERT INTO "schedules" ("days", "start_at", "end_at", "office_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["days", "Sabaduki"], ["start_at", "2022-11-21 09:30:00"], ["end_at", "2022-11-21 13:30:00"], ["office_id", 1], ["created_at", "2022-11-21 18:40:50.389428"], ["updated_at", "2022-11-21 18:40:50.389428"]]
+  ↳ app/controllers/schedules_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/schedules_controller.rb:4:in `create'
+Redirected to http://localhost:3000/offices/1
+Completed 302 Found in 7ms (ActiveRecord: 2.6ms | Allocations: 4787)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:40:50 -0300
+Processing by OfficesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.0ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.0ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2197)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 4469)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 5289)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:41:29 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 5.9ms | Allocations: 10195)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 10280)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms | Allocations: 11557)
+
+
+  
+ActionView::Template::Error (undefined method `minute' for Mon, 21 Nov 2022 10:00:00.000000000 UTC +00:00:ActiveSupport::TimeWithZone
+
+      wrap_with_time_zone time.__send__(sym, *args, &block)
+                              ^^^^^^^^^):
+    25:             <strong>Apertura:</strong>
+    26:             <%= schedule.start_at.hour %>
+    27:             :
+    28:             <%= schedule.start_at.minute %>
+    29:         </p>
+    30: 
+    31:         <p>
+  
+app/views/offices/show.html.erb:28
+app/views/offices/show.html.erb:18
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:42:07 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.5ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 10180)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 10265)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms | Allocations: 11547)
+
+
+  
+ActionView::Template::Error (undefined method `minutes' for Mon, 21 Nov 2022 10:00:00.000000000 UTC +00:00:ActiveSupport::TimeWithZone
+
+      wrap_with_time_zone time.__send__(sym, *args, &block)
+                              ^^^^^^^^^):
+    25:             <strong>Apertura:</strong>
+    26:             <%= schedule.start_at.hour %>
+    27:             :
+    28:             <%= schedule.start_at.minutes %>
+    29:         </p>
+    30: 
+    31:         <p>
+  
+app/views/offices/show.html.erb:28
+app/views/offices/show.html.erb:18
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:44:04 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 3061)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 5614)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.1ms | Allocations: 6923)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:44:33 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3040)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 5579)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 6914)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:44:58 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 3040)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 5578)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 6891)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:49:12 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 3028)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 5566)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 6879)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:51:09 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 3044)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 5582)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 6895)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:51:30 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 3036)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 5574)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 6887)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-21 15:53:17 -0300
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3224)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 3567)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 15:53:34 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.0ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered offices/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2137)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4311)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 5047)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:00:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  Rendered offices/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 3093)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 3203)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.4ms | Allocations: 15419)
+
+
+  
+ActionView::Template::Error (undefined method `schedules' for nil:NilClass
+
+'.freeze;@output_buffer.append=( render @Office.schedules );@output_buffer.safe_append='
+                                               ^^^^^^^^^^):
+    14: </ul>
+    15: 
+    16: <h3>Horarios</h3>
+    17: <%= render @Office.schedules %>
+    18: 
+    19: 
+    20: <h3>Agregar horarios:</h3>
+  
+app/views/offices/show.html.erb:17
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:01:17 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [3 times] (Duration: 0.5ms | Allocations: 593)
+  Rendered offices/show.html.erb within layouts/application (Duration: 15.0ms | Allocations: 14186)
+  Rendered layout layouts/application.html.erb (Duration: 58.8ms | Allocations: 49238)
+Completed 200 OK in 61ms (Views: 59.5ms | ActiveRecord: 0.4ms | Allocations: 50670)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:03:50 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [3 times] (Duration: 0.5ms | Allocations: 598)
+  Rendered schedules/_form.html.erb (Duration: 5.8ms | Allocations: 4013)
+  Rendered offices/show.html.erb within layouts/application (Duration: 15.3ms | Allocations: 14810)
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 49916)
+Completed 200 OK in 59ms (Views: 41.7ms | ActiveRecord: 0.7ms | Allocations: 62187)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:03:51 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [3 times] (Duration: 0.3ms | Allocations: 253)
+  Rendered schedules/_form.html.erb (Duration: 1.6ms | Allocations: 1318)
+  Rendered offices/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2650)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4924)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 5790)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:03:52 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [3 times] (Duration: 0.6ms | Allocations: 229)
+  Rendered schedules/_form.html.erb (Duration: 2.7ms | Allocations: 1203)
+  Rendered offices/show.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2403)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4578)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.3ms | Allocations: 5318)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-21 16:03:55 -0300
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 980)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3331)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 3689)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-21 16:03:57 -0300
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 678)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3029)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 3305)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:03:57 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [3 times] (Duration: 0.2ms | Allocations: 229)
+  Rendered schedules/_form.html.erb (Duration: 1.2ms | Allocations: 1190)
+  Rendered offices/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2389)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 4563)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 5290)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:46:33 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [3 times] (Duration: 1.5ms | Allocations: 1355)
+  Rendered schedules/_form.html.erb (Duration: 5.3ms | Allocations: 3711)
+  Rendered offices/show.html.erb within layouts/application (Duration: 16.6ms | Allocations: 15293)
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 50626)
+Completed 200 OK in 64ms (Views: 44.7ms | ActiveRecord: 0.9ms | Allocations: 62966)
+
+
+Started DELETE "/offices/1/schedules/2" for 127.0.0.1 at 2022-11-21 16:46:39 -0300
+Processing by SchedulesController#destroy as TURBO_STREAM
+  Parameters: {"office_id"=>"1", "id"=>"2"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:9:in `destroy'
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ? AND "schedules"."id" = ? LIMIT ?[0m  [["office_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:10:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schedules_controller.rb:11:in `destroy'
+  [1m[36mSchedule Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schedules" WHERE "schedules"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/schedules_controller.rb:11:in `destroy'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/schedules_controller.rb:11:in `destroy'
+Redirected to http://localhost:3000/offices/1
+Completed 303 See Other in 7ms (ActiveRecord: 2.9ms | Allocations: 3772)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:46:39 -0300
+Processing by OfficesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.0ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 0.4ms | Allocations: 410)
+  Rendered schedules/_form.html.erb (Duration: 1.2ms | Allocations: 1244)
+  Rendered offices/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2690)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 4962)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 5780)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:54:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 8.2ms | Allocations: 5449)
+  Rendered offices/show.html.erb within layouts/application (Duration: 16.4ms | Allocations: 15487)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 15583)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.7ms | Allocations: 27829)
+
+
+  
+ActionView::Template::Error (undefined method `edit_schedule_path' for #<ActionView::Base:0x0000000000b978>
+
+        '.freeze;@output_buffer.append=( link_to "Editar", edit_schedule_path(@schedule, @office) );@output_buffer.safe_append='</li>
+                                                           ^^^^^^^^^^^^^^^^^^
+Did you mean?  office_schedule_path):
+    14:         </p>
+    15: 
+    16:         <p>
+    17:         <%= link_to "Editar", edit_schedule_path(@schedule, @office) %></li>
+    18:         <%= link_to "Eliminar", [schedule.office, schedule], data: {
+    19:                   turbo_method: :delete,
+    20:                   turbo_confirm: "Esta seguro?"
+  
+app/views/schedules/_schedule.html.erb:17
+app/views/offices/show.html.erb:17
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:55:24 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.2ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 3.0ms | Allocations: 1631)
+  Rendered offices/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 3032)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3118)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms | Allocations: 4475)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"schedules", :id=>"1", :office_id=>nil}, missing required keys: [:office_id]):
+    14:         </p>
+    15: 
+    16:         <p>
+    17:         <%= link_to "Editar", office_schedule_path(@schedule, @office) %></li>
+    18:         <%= link_to "Eliminar", [schedule.office, schedule], data: {
+    19:                   turbo_method: :delete,
+    20:                   turbo_confirm: "Esta seguro?"
+  
+app/views/schedules/_schedule.html.erb:17
+app/views/offices/show.html.erb:17
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:56:03 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 1.8ms | Allocations: 1840)
+  Rendered offices/show.html.erb within layouts/application (Duration: 4.5ms | Allocations: 3241)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3327)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms | Allocations: 4628)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"schedules", :id=>"1", :office_id=>nil}, possible unmatched constraints: [:office_id]
+Did you mean?  office_schedule_url):
+    14:         </p>
+    15: 
+    16:         <p>
+    17:         <%= link_to "Editar", office_schedule_path(@schedule) %></li>
+    18:         <%= link_to "Eliminar", [schedule.office, schedule], data: {
+    19:                   turbo_method: :delete,
+    20:                   turbo_confirm: "Esta seguro?"
+  
+app/views/schedules/_schedule.html.erb:17
+app/views/offices/show.html.erb:17
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:57:55 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 1.4ms | Allocations: 2190)
+  Rendered offices/show.html.erb within layouts/application (Duration: 10.6ms | Allocations: 12227)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 12323)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.8ms | Allocations: 24569)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"schedules", :id=>"1", :office_id=>nil}, possible unmatched constraints: [:office_id]
+Did you mean?  edit_office_schedule_url):
+    14:         </p>
+    15: 
+    16:         <p>
+    17:         <%= link_to "Editar", edit_office_schedule_path(@schedule) %></li>
+    18:         <%= link_to "Eliminar", [schedule.office, schedule], data: {
+    19:                   turbo_method: :delete,
+    20:                   turbo_confirm: "Esta seguro?"
+  
+app/views/schedules/_schedule.html.erb:17
+app/views/offices/show.html.erb:17
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:58:39 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 1.4ms | Allocations: 2190)
+  Rendered offices/show.html.erb within layouts/application (Duration: 10.0ms | Allocations: 12227)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 12323)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.7ms | Allocations: 24569)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"schedules", :id=>"1", :office_id=>nil}, possible unmatched constraints: [:office_id]
+Did you mean?  edit_office_schedule_path):
+    14:         </p>
+    15: 
+    16:         <p>
+    17:         <%= link_to "Editar", edit_office_schedule_url(@schedule) %></li>
+    18:         <%= link_to "Eliminar", [schedule.office, schedule], data: {
+    19:                   turbo_method: :delete,
+    20:                   turbo_confirm: "Esta seguro?"
+  
+app/views/schedules/_schedule.html.erb:17
+app/views/offices/show.html.erb:17
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:59:12 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 1.3ms | Allocations: 2178)
+  Rendered offices/show.html.erb within layouts/application (Duration: 9.9ms | Allocations: 12217)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 12313)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.7ms | Allocations: 24558)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"schedules", :id=>"1"}, missing required keys: [:office_id]
+Did you mean?  edit_office_schedule_url):
+    14:         </p>
+    15: 
+    16:         <p>
+    17:         <%= link_to "Editar", edit_office_schedule_path %></li>
+    18:         <%= link_to "Eliminar", [schedule.office, schedule], data: {
+    19:                   turbo_method: :delete,
+    20:                   turbo_confirm: "Esta seguro?"
+  
+app/views/schedules/_schedule.html.erb:17
+app/views/offices/show.html.erb:17
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 16:59:36 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 1.3ms | Allocations: 1371)
+  Rendered schedules/_form.html.erb (Duration: 5.1ms | Allocations: 3691)
+  Rendered offices/show.html.erb within layouts/application (Duration: 15.4ms | Allocations: 15276)
+  Rendered layout layouts/application.html.erb (Duration: 41.3ms | Allocations: 50450)
+Completed 200 OK in 61ms (Views: 42.4ms | ActiveRecord: 0.8ms | Allocations: 62750)
+
+
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 16:59:41 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 666)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"offices", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/schedules_controller.rb:16:in `edit'
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:00:54 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2113)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"edit", :controller=>"schedules", :id=>"1", :office_id=>nil}, possible unmatched constraints: [:office_id]
+Did you mean?  edit_office_schedule_url):
+  
+app/controllers/schedules_controller.rb:16:in `edit'
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:01:20 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+Completed 500 Internal Server Error in 1ms (Allocations: 763)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"edit", :controller=>"schedules", :id=>"1", :office_id=>nil}, possible unmatched constraints: [:office_id]
+Did you mean?  edit_office_schedule_path):
+  
+app/controllers/schedules_controller.rb:16:in `edit'
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:02:12 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/_form.html.erb (Duration: 9.2ms | Allocations: 2640)
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 9.9ms | Allocations: 3176)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 3272)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 6617)
+
+
+  
+ActionView::Template::Error (undefined method `schedules' for nil:NilClass
+
+            @virtual_path = "schedules/_form";schedule = local_assigns[:schedule]; schedule = schedule;;@output_buffer.append=  form_with model: [ @office, @office.schedules.build ] do |form| @output_buffer.safe_append='
+                                                                                                                                                                   ^^^^^^^^^^):
+    1: <%= form_with model: [ @office, @office.schedules.build ] do |form| %>
+    2:    <p>
+    3:     <%= form.label value="Dias separados por comas ','" %><br>
+    4:     <%= form.text_field :days %>
+  
+app/views/schedules/_form.html.erb:1
+app/views/schedules/edit.html.erb:3
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:02:51 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:16:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/_form.html.erb (Duration: 13.1ms | Allocations: 11727)
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 13.6ms | Allocations: 12260)
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 47469)
+Completed 200 OK in 58ms (Views: 40.3ms | ActiveRecord: 0.7ms | Allocations: 59821)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:03:05 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 1.0ms | Allocations: 862)
+  Rendered schedules/_form.html.erb (Duration: 1.6ms | Allocations: 1612)
+  Rendered offices/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 4984)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 7339)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 8664)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:03:06 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.0ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 0.5ms | Allocations: 480)
+  Rendered schedules/_form.html.erb (Duration: 1.3ms | Allocations: 1188)
+  Rendered offices/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2622)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4797)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 5569)
+
+
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:03:09 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:16:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/_form.html.erb (Duration: 1.5ms | Allocations: 1282)
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1342)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3517)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 4262)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:06:44 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 1.4ms | Allocations: 1372)
+  Rendered schedules/_form.html.erb (Duration: 4.3ms | Allocations: 5330)
+  Rendered offices/show.html.erb within layouts/application (Duration: 14.4ms | Allocations: 16925)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 17021)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.7ms | Allocations: 29267)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `office' for #<ActionView::Base:0x0000000000b9a0>
+
+            @virtual_path = "schedules/_form";;@output_buffer.append=  form_with model: [ office, office.schedules.build ] do |form| @output_buffer.safe_append='
+                                                                                          ^^^^^^
+Did you mean?  @office):
+    1: <%= form_with model: [ office, office.schedules.build ] do |form| %>
+    2:    <p>
+    3:     <%= form.label value="Dias separados por comas ','" %><br>
+    4:     <%= form.text_field :days %>
+  
+app/views/schedules/_form.html.erb:1
+app/views/offices/show.html.erb:22
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:08:19 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 1.0ms | Allocations: 737)
+  Rendered schedules/_form.html.erb (Duration: 4.0ms | Allocations: 5040)
+  Rendered offices/show.html.erb within layouts/application (Duration: 7.4ms | Allocations: 7303)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 7389)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms | Allocations: 8745)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `office' for #<ActionView::Base:0x0000000000bd38>
+
+            @virtual_path = "schedules/_form";;@output_buffer.append=  form_with model: [ office, office.schedules.build ] do |form| @output_buffer.safe_append='
+                                                                                          ^^^^^^
+Did you mean?  @office):
+    1: <%= form_with model: [ office, office.schedules.build ] do |form| %>
+    2:    <p>
+    3:     <%= form.label value="Dias separados por comas ','" %><br>
+    4:     <%= form.text_field :days %>
+  
+app/views/schedules/_form.html.erb:1
+app/views/offices/show.html.erb:22
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:08:41 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  Rendered offices/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1418)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1507)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms | Allocations: 2819)
+
+
+  
+ActionView::Template::Error (You invoked render but did not give any of :partial, :template, :inline, :file, :plain, :html or :body option.):
+    14: </ul>
+    15: 
+    16: <h3>Horarios</h3>
+    17: <%= render office: @office, button:"Agregar Horario" %>
+    18: 
+    19: 
+    20: <h3>Agregar horarios:</h3>
+  
+app/views/offices/show.html.erb:17
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:09:21 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 1.1ms | Allocations: 736)
+  Rendered offices/show.html.erb within layouts/application (Duration: 4.1ms | Allocations: 4919)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 5004)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms | Allocations: 6325)
+
+
+  
+ActionView::Template::Error (undefined method `keys' for "Agregar Horario":String
+
+        @locals.keys
+               ^^^^^):
+    19: 
+    20: <h3>Agregar horarios:</h3>
+    21: 
+    22: <%= render 'schedules/form', button="Agregar Horario" %>
+  
+app/views/offices/show.html.erb:22
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:10:29 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  Rendered offices/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 1230)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | Allocations: 1320)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 2635)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1> <%= @office.name %> </h1>
+
+<span> <%= @office.address %> </span>
+
+<span> <%= @office.phone %> </span>
+
+
+<ul>
+  <li><%= link_to "Editar", edit_office_path(@office) %></li>
+   <li><%= link_to "Eliminar", office_path(@office), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Esta seguro?"
+                  } %></li>
+</ul>
+
+<h3>Horarios</h3>
+<%= render @office.schedules %>
+
+
+<h3>Agregar horarios:</h3>
+
+<%= render "form", office: @office button:"Agregar Horario" %>
+
+):
+1:    <h1> <%= @office.name %> </h1>
+2:    
+3:    <span> <%= @office.address %> </span>
+4:    
+5:    <span> <%= @office.phone %> </span>
+6:    
+7:    
+8:    <ul>
+9:      <li><%= link_to "Editar", edit_office_path(@office) %></li>
+10:       <li><%= link_to "Eliminar", office_path(@office), data: {
+11:                        turbo_method: :delete,
+12:                        turbo_confirm: "Esta seguro?"
+13:                      } %></li>
+14:    </ul>
+15:    
+16:    <h3>Horarios</h3>
+17:    <%= render @office.schedules %>
+18:    
+19:    
+20:    <h3>Agregar horarios:</h3>
+21:    
+22:    <%= render "form", office: @office button:"Agregar Horario" %>
+  
+app/views/offices/show.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/offices/show.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/offices/show.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/offices/show.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/offices/show.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/offices/show.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:10:52 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 1.1ms | Allocations: 736)
+  Rendered offices/_form.html.erb (Duration: 7.3ms | Allocations: 9250)
+  Rendered offices/show.html.erb within layouts/application (Duration: 10.4ms | Allocations: 11519)
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 46642)
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.1ms | Allocations: 48038)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:12:02 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 1.3ms | Allocations: 736)
+  Rendered offices/_form.html.erb (Duration: 1.5ms | Allocations: 1697)
+  Rendered offices/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 3955)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 6493)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.1ms | Allocations: 7900)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:12:03 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 0.6ms | Allocations: 480)
+  Rendered offices/_form.html.erb (Duration: 1.3ms | Allocations: 1157)
+  Rendered offices/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2587)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4761)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 5517)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:12:09 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 0.8ms | Allocations: 736)
+  Rendered offices/_form.html.erb (Duration: 4.3ms | Allocations: 5375)
+  Rendered offices/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 7633)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 7718)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.1ms | Allocations: 8971)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `office' for #<ActionView::Base:0x0000000000d0c0>
+
+            @virtual_path = "offices/_form";button = local_assigns[:button]; button = button;schedule = local_assigns[:schedule]; schedule = schedule;;@output_buffer.append=  form_with model: office do |form| @output_buffer.safe_append='
+                                                                                                                                                                                                ^^^^^^
+Did you mean?  @office):
+    1: <%= form_with model: office do |form| %>
+    2:   <div>
+    3:     <%= form.label value="Nombre" %><br>
+    4:     <%= form.text_field :name %>
+  
+app/views/offices/_form.html.erb:1
+app/views/offices/show.html.erb:22
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:12:57 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 0.9ms | Allocations: 736)
+  Rendered offices/_form.html.erb (Duration: 4.2ms | Allocations: 5375)
+  Rendered offices/show.html.erb within layouts/application (Duration: 7.7ms | Allocations: 7632)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 7717)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms | Allocations: 8996)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `office' for #<ActionView::Base:0x0000000000d408>
+
+            @virtual_path = "offices/_form";button = local_assigns[:button]; button = button;schedule = local_assigns[:schedule]; schedule = schedule;;@output_buffer.append=  form_with model: office do |form| @output_buffer.safe_append='
+                                                                                                                                                                                                ^^^^^^
+Did you mean?  @office):
+    1: <%= form_with model: office do |form| %>
+    2:   <div>
+    3:     <%= form.label value="Nombre" %><br>
+    4:     <%= form.text_field :name %>
+  
+app/views/offices/_form.html.erb:1
+app/views/offices/show.html.erb:22
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:15:07 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.7ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 2.9ms | Allocations: 736)
+  Rendered offices/show.html.erb within layouts/application (Duration: 8.7ms | Allocations: 3133)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3218)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.9ms | Allocations: 4497)
+
+
+  
+ActionView::Template::Error (You invoked render but did not give any of :partial, :template, :inline, :file, :plain, :html or :body option.):
+    19: 
+    20: <h3>Agregar horarios:</h3>
+    21: 
+    22: <%= render office:'schedules/form' %>
+  
+app/views/offices/show.html.erb:22
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:15:29 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 0.9ms | Allocations: 736)
+  Rendered schedules/_form.html.erb (Duration: 6.1ms | Allocations: 7910)
+  Rendered offices/show.html.erb within layouts/application (Duration: 9.3ms | Allocations: 10177)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 12767)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.3ms | Allocations: 14084)
+
+
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:15:34 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:16:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/_form.html.erb (Duration: 2.0ms | Allocations: 1841)
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2062)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 4417)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 5719)
+
+
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:16:13 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:16:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/_form.html.erb (Duration: 1.9ms | Allocations: 1829)
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2107)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 4645)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 6011)
+
+
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:16:31 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:16:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/_form.html.erb (Duration: 2.2ms | Allocations: 1823)
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2099)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4637)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 5992)
+
+
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:16:50 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  [1m[36mOffice Load (0.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:16:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/_form.html.erb (Duration: 7.6ms | Allocations: 1787)
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2095)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 4633)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 0.2ms | Allocations: 5988)
+
+
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:17:14 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:16:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1882)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 1970)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 3308)
+
+
+  
+ActionView::Template::Error (undefined method `days' for nil:NilClass
+
+            @virtual_path = "schedules/edit";;@output_buffer.safe_append='<h1> Editar horario de '.freeze;@schedule.days;@output_buffer.safe_append=' </h1>
+                                                                                                                   ^^^^^):
+    1: <h1> Editar horario de <%@schedule.days%> </h1>
+    2: 
+    3: <%= render "form", office: @office, schedule: @schedule %>
+  
+app/views/schedules/edit.html.erb:1
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:18:07 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  [1m[36mOffice Load (0.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:16:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 6.9ms | Allocations: 5662)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 5750)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms | Allocations: 7078)
+
+
+  
+ActionView::Template::Error (undefined method `schedule' for #<Office id: 1, name: "Central", address: "La Plata Centro", phone: "123654789", created_at: "2022-11-21 16:20:37.587351000 +0000", updated_at: "2022-11-21 16:20:37.587351000 +0000">
+Did you mean?  schedules
+               schedules=):
+    1: <h1> Editar horario de <%@office.schedule.days%> </h1>
+    2: 
+    3: <%= render "form", office: @office, schedule: @schedule %>
+  
+app/views/schedules/edit.html.erb:1
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:18:40 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  [1m[36mOffice Load (0.3ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:16:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/_form.html.erb (Duration: 2.2ms | Allocations: 1801)
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2109)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4662)
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 6014)
+
+
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:19:04 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:16:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/_form.html.erb (Duration: 3.6ms | Allocations: 1843)
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2104)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4642)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.1ms | Allocations: 5997)
+
+
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:19:34 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  [1m[36mOffice Load (0.3ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:16:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/_form.html.erb (Duration: 2.7ms | Allocations: 1808)
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2066)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4604)
+Completed 200 OK in 16ms (Views: 11.2ms | ActiveRecord: 0.3ms | Allocations: 5959)
+
+
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:21:03 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:16:in `edit'
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ? AND "schedules"."id" = ? LIMIT ?[0m  [["office_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:17:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/_form.html.erb (Duration: 1.6ms | Allocations: 1786)
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2069)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 16166)
+Completed 200 OK in 19ms (Views: 9.7ms | ActiveRecord: 0.9ms | Allocations: 26273)
+
+
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:22:48 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:16:in `edit'
+  [1m[36mSchedule Load (0.0ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ? AND "schedules"."id" = ? LIMIT ?[0m  [["office_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:17:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/_form.html.erb (Duration: 5.7ms | Allocations: 5292)
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 6.2ms | Allocations: 5570)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 5655)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms | Allocations: 7809)
+
+
+  
+ActionView::Template::Error (undefined method `schedules_path' for #<ActionView::Base:0x000000000133f8>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^):
+    1: <%= form_with model: [@office.schedules.build ] do |form| %>
+    2:    <p>
+    3:     <%= form.label value="Dias separados por comas ','" %><br>
+    4:     <%= form.text_field :days %>
+  
+app/views/schedules/_form.html.erb:1
+app/views/schedules/edit.html.erb:3
+Started GET "/offices/1/schedules/1/edit" for 127.0.0.1 at 2022-11-21 17:23:59 -0300
+Processing by SchedulesController#edit as HTML
+  Parameters: {"office_id"=>"1", "id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:16:in `edit'
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ? AND "schedules"."id" = ? LIMIT ?[0m  [["office_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:17:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering schedules/edit.html.erb within layouts/application
+  Rendered schedules/_form.html.erb (Duration: 1.6ms | Allocations: 1698)
+  Rendered schedules/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1974)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 4528)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 6696)
+
+
+Started POST "/offices/1/schedules" for 127.0.0.1 at 2022-11-21 17:24:13 -0300
+Processing by SchedulesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "schedule"=>{"days"=>"Domingo", "start_at"=>"08:09", "end_at"=>"12:00"}, "commit"=>"Enviar", "office_id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schedules_controller.rb:4:in `create'
+  [1m[36mSchedule Create (0.2ms)[0m  [1m[32mINSERT INTO "schedules" ("days", "start_at", "end_at", "office_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["days", "Domingo"], ["start_at", "2022-11-21 08:09:00"], ["end_at", "2022-11-21 12:00:00"], ["office_id", 1], ["created_at", "2022-11-21 20:24:13.012420"], ["updated_at", "2022-11-21 20:24:13.012420"]]
+  ↳ app/controllers/schedules_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/schedules_controller.rb:4:in `create'
+Redirected to http://localhost:3000/offices/1
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms | Allocations: 4716)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:24:13 -0300
+Processing by OfficesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [3 times] (Duration: 1.3ms | Allocations: 962)
+  Rendered schedules/_form.html.erb (Duration: 5.7ms | Allocations: 1623)
+  Rendered offices/show.html.erb within layouts/application (Duration: 9.2ms | Allocations: 5009)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 7378)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.2ms | Allocations: 8725)
+
+
+Started DELETE "/offices/1/schedules/4" for 127.0.0.1 at 2022-11-21 17:24:30 -0300
+Processing by SchedulesController#destroy as TURBO_STREAM
+  Parameters: {"office_id"=>"1", "id"=>"4"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:9:in `destroy'
+  [1m[36mSchedule Load (0.0ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ? AND "schedules"."id" = ? LIMIT ?[0m  [["office_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/schedules_controller.rb:10:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schedules_controller.rb:11:in `destroy'
+  [1m[36mSchedule Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schedules" WHERE "schedules"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/schedules_controller.rb:11:in `destroy'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/schedules_controller.rb:11:in `destroy'
+Redirected to http://localhost:3000/offices/1
+Completed 303 See Other in 6ms (ActiveRecord: 2.1ms | Allocations: 3176)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:24:30 -0300
+Processing by OfficesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.0ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 0.5ms | Allocations: 480)
+  Rendered schedules/_form.html.erb (Duration: 1.1ms | Allocations: 1198)
+  Rendered offices/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2634)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4808)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 5553)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:25:11 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 0.9ms | Allocations: 736)
+  Rendered schedules/_form.html.erb (Duration: 3.1ms | Allocations: 4403)
+  Rendered offices/show.html.erb within layouts/application (Duration: 6.6ms | Allocations: 6662)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 6747)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms | Allocations: 8006)
+
+
+  
+ActionView::Template::Error (undefined method `to_model' for #<ActiveRecord::Associations::CollectionProxy [#<Schedule id: 1, days: "Lunes,Miercoles", start_at: "2022-11-21 10:00:00.000000000 +0000", end_at: "2022-11-21 17:00:00.000000000 +0000", office_id: 1, created_at: "2022-11-21 18:28:57.169739000 +0000", updated_at: "2022-11-21 18:28:57.169739000 +0000">, #<Schedule id: 3, days: "Sabaduki", start_at: "2022-11-21 09:30:00.000000000 +0000", end_at: "2022-11-21 13:30:00.000000000 +0000", office_id: 1, created_at: "2022-11-21 18:40:50.389428000 +0000", updated_at: "2022-11-21 18:40:50.389428000 +0000">]>
+Did you mean?  to_xml):
+    1: <%= form_with model: [ @office, @office.schedules ] do |form| %>
+    2:    <p>
+    3:     <%= form.label value="Dias separados por comas ','" %><br>
+    4:     <%= form.text_field :days %>
+  
+app/views/schedules/_form.html.erb:1
+app/views/offices/show.html.erb:22
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:29:09 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 0.7ms | Allocations: 701)
+  Rendered schedules/_form.html.erb (Duration: 3.1ms | Allocations: 1651)
+  Rendered offices/show.html.erb within layouts/application (Duration: 8.8ms | Allocations: 8637)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 22730)
+Completed 200 OK in 21ms (Views: 16.0ms | ActiveRecord: 0.8ms | Allocations: 28120)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:29:17 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 0.5ms | Allocations: 368)
+  Rendered schedules/_form.html.erb (Duration: 1.5ms | Allocations: 1196)
+  Rendered offices/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2519)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4694)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 5465)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-11-21 17:29:18 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.0ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 0.4ms | Allocations: 368)
+  Rendered schedules/_form.html.erb (Duration: 1.3ms | Allocations: 1205)
+  Rendered offices/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2526)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4700)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 5426)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-02 21:52:07 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OfficesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/index.html.erb within layouts/application
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/offices/index.html.erb:4
+  Rendered offices/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 5855)
+  Rendered layout layouts/application.html.erb (Duration: 41.1ms | Allocations: 41447)
+Completed 200 OK in 57ms (Views: 42.5ms | ActiveRecord: 0.4ms | Allocations: 46968)
+
+
+Started GET "/offices/1" for 127.0.0.1 at 2022-12-02 21:52:17 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 1]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of schedules/_schedule.html.erb [2 times] (Duration: 1.4ms | Allocations: 1185)
+  Rendered schedules/_form.html.erb (Duration: 5.3ms | Allocations: 3552)
+  Rendered offices/show.html.erb within layouts/application (Duration: 20.0ms | Allocations: 14622)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 16905)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.5ms | Allocations: 19709)
+
+
+Started GET "/offices/2" for 127.0.0.1 at 2022-12-02 21:52:19 -0300
+Processing by OfficesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOffice Load (0.1ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/offices_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering offices/show.html.erb within layouts/application
+  [1m[36mSchedule Load (0.0ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."office_id" = ?[0m  [["office_id", 2]]
+  ↳ app/views/offices/show.html.erb:17
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 26)
+  Rendered schedules/_form.html.erb (Duration: 1.2ms | Allocations: 1232)
+  Rendered offices/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2224)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 4399)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 5222)
+
+
+Started GET "/offices/new" for 127.0.0.1 at 2022-12-02 21:52:23 -0300
+Processing by OfficesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering offices/new.html.erb within layouts/application
+  Rendered offices/_form.html.erb (Duration: 10.6ms | Allocations: 1849)
+  Rendered offices/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 2130)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 4423)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 4821)
+
+

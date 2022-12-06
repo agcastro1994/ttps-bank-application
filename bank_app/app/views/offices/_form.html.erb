@@ -1,0 +1,29 @@
+<%= form_with model: office do |form| %>
+  <div>
+    <%= form.label value="Nombre" %><br>
+    <%= form.text_field :name %>
+    <% office.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label value="Direccion" %><br>
+    <%= form.text_area :address %>
+    <% office.errors.full_messages_for(:address).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label value="Telefono" %><br>
+    <%= form.text_field :phone %>
+    <% office.errors.full_messages_for(:phone).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit value=button%>
+  </div>
+<% end %>
