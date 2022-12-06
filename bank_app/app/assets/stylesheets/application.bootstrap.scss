@@ -1,0 +1,65 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$font-stack: 'Montserrat', sans-serif;
+$font-color: #494949;
+$font-color-gray: #2e2e2e;
+$border-color: #ec9626;
+
+body {
+    h1{
+        font-weight: 900;
+        color:$border-color;
+    }
+  font: 100% $font-stack;
+ 
+ 
+}
+
+table-latitude {
+    width: 100%;
+    caption {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $font-color;
+        text-align: center;
+    }
+    thead {
+        border-top: 2px solid $border-color;
+        border-bottom: 2px solid $border-color;
+        th {
+            text-transform: uppercase;
+            text-align: center;
+            padding: 10px;
+            color: $border-color;
+            border: 1px solid #F1F1F1;
+        }
+    }
+    tbody {
+        tr {
+            border-bottom: 1px solid #F1F1F1;
+            color: $font-color-gray;
+            td {
+                padding: 10px;
+                border: 1px solid #F1F1F1;
+            }
+            th {
+                padding-left: 10px;
+                border: 1px solid #F1F1F1;
+            }
+        }
+    }
+    tfoot {
+        color: $font-color;
+        font-style: italic;
+        border-bottom: 2px solid $border-color;
+        tr {
+            td {
+                padding: 10px;
+                border: 1px solid #F1F1F1;
+            }
+        }
+    }
+}
