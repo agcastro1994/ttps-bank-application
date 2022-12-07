@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../javascript/validation.js"],
+  "sourcesContent": ["(function () {\n    'use strict'\n  \n    // Fetch all the forms we want to apply custom Bootstrap validation styles to\n    var forms = document.querySelectorAll('.needs-validation')\n  \n    // Loop over them and prevent submission\n    Array.prototype.slice.call(forms)\n      .forEach(function (form) {\n        form.addEventListener('submit', function (event) {\n          if (!form.checkValidity()) {\n            event.preventDefault()\n            event.stopPropagation()\n          }\n  \n          form.classList.add('was-validated')\n        }, false)\n      })\n  })()"],
+  "mappings": ";;AAAA,GAAC,WAAY;AACT;AAGA,QAAI,QAAQ,SAAS,iBAAiB,mBAAmB;AAGzD,UAAM,UAAU,MAAM,KAAK,KAAK,EAC7B,QAAQ,SAAU,MAAM;AACvB,WAAK,iBAAiB,UAAU,SAAU,OAAO;AAC/C,YAAI,CAAC,KAAK,cAAc,GAAG;AACzB,gBAAM,eAAe;AACrB,gBAAM,gBAAgB;AAAA,QACxB;AAEA,aAAK,UAAU,IAAI,eAAe;AAAA,MACpC,GAAG,KAAK;AAAA,IACV,CAAC;AAAA,EACL,GAAG;",
+  "names": []
+}
