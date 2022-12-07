@@ -1,31 +1,54 @@
-
-<div class="d-flex justify-content-center ">
-<h1 >Sucursales</h1>
+<div class= "d-flex justify-content-center">
+<h3 class = "offices my-5">Sucursales</h3>
 </div>
- <%= link_to "Nueva sucursal", new_office_path %>
 
- <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Sucursal</th>
-      <th scope="col">Visualizar</th>
-      <th scope="col">Editar</th>
-      <th scope="col">Eliminar</th>
-    </tr>
-  </thead>
+<div class= office-button-top-section>
 
 
- <tbody>
-    <tr>
-    
+<%= button_to "Nueva sucursal",  new_office_path , class: ' btn btn-outline-dark new-office-button' , :method => :get %> 
+</div>
+
+<div class=" card card-office">
+
+<div class ="list-of-offices">
+<table class = " table table-bordered table-responsive table-hover border-secondary office-table">
+<tr class= "table-dark tr-office">
+    <th>Nombre</th>
+     <th>Visualizar</th>
+    <th>Editar</th>   
+    <th>Eliminar</th>
+  </tr>
+
   <% @offices.each do |office| %>
-    <li>
-        <%= link_to office.name, office %>
-    </li>
+    <tr>
+       <td> <%= office.name%> </td>
+       <td>
+        <%= link_to office_path(office) do%>
+           <iconify-icon class="edit-office-button" icon="file-icons:qlikview"></iconify-icon>
+           <% end %> 
+       </td>
+      <td>
+        <%= link_to edit_office_path(office) do %>
+           <iconify-icon class="edit-office-button" icon="ic:sharp-edit-note"></iconify-icon>
+        <% end %> 
+       </td> 
+
+       <td>
+        <%= button_to office_delete_path(office.id), class:'office-button', data: {turbo_method: :delete, turbo_confirm: "Esta seguro?" } do %>
+          <iconify-icon class="edit-office-button" icon="material-symbols:delete-outline-rounded"></iconify-icon>
+        <% end %>
+
+       </td>          
+     
+    </tr>
   <% end %>
-   </tr>
-  </tbody>
+
 </table>
+</div>
+</div>
+
+
+
 
 
 

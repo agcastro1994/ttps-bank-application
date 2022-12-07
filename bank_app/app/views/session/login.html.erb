@@ -1,0 +1,15 @@
+<h1>Iniciar sesion</h1>
+
+<%= form_with model: @user, url: sign_in_path do |form| %>
+ 
+  <div class="mb-3">
+    <% form.label :email %>
+    <%= form.text_field :email, class:"form-control", placeholder: "Ej: usuario@mail.com" %>
+  </div>
+  <div class="mb-3">
+    <% form.label :password %>
+    <%= form.password_field :password, class:"form-control",  placeholder: "Ingrese su clave" %>
+  </div>
+    <%= form.submit value="Iniciar sesion", class:"btn btn-primary" %>
+  </div>
+<% end %>
