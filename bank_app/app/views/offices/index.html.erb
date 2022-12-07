@@ -34,7 +34,7 @@
        </td> 
 
        <td>
-        <%= button_to office_path(office), class:'office-button', data: {turbo_method: :delete, turbo_confirm: "Esta seguro?" } do %>
+        <%= button_to office_delete_path(office.id), class:'office-button', data: {turbo_method: :delete, turbo_confirm: "Esta seguro?" } do %>
           <iconify-icon class="edit-office-button" icon="material-symbols:delete-outline-rounded"></iconify-icon>
         <% end %>
 

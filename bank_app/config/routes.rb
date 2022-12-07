@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
-  root "offices#index"
+  root "home#home"
 
   resources :offices do
     resources :schedules
+    post "/delete", :to => "offices#destroy", :as => "delete"
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  
+  
+  get "sign_up", to: "registration#register"
+  post "sign_up", to: "registration#create_user"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get "sign_in", to: "session#login"
+  post "sign_in", to: "session#create_session"
+  delete "logout", to: "session#logout"
+
 end

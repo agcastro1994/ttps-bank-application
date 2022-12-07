@@ -28,7 +28,7 @@ class OfficesController < ApplicationController
   def update
     @office = Office.find(params[:id])
 
-    if @office.update(article_params)
+    if @office.update(office_params)
       redirect_to @office
     else
       render :edit, status: :unprocessable_entity
@@ -36,7 +36,7 @@ class OfficesController < ApplicationController
   end
 
   def destroy
-    @office = Office.find(params[:id])
+    @office = Office.find(params[:office_id])
     @office.destroy
 
     redirect_to offices_path, status: :see_other
