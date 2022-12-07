@@ -5,8 +5,8 @@
     <%= form.label value="Nombre", class:'office-label form-label' %> <br>
     <%= form.text_field :name , required: true, class: 'form-control'%>
    
-    <% office.errors.full_messages_for(:name).each do |message| %>
-      <div><%= message %></div>
+    <% office.errors.messages_for(:name).each do |message| %>
+      <div class="error"><%= message %></div>
     <% end %>
 
        <div class="invalid-feedback">
@@ -18,8 +18,8 @@
   <div class=form-office-field>
     <%= form.label value="Direccion"  , class:'office-label form-label'%><br>
     <%= form.text_area :address , class: 'form-control', required: true %>
-    <% office.errors.full_messages_for(:address).each do |message| %>
-      <div class="is-invalid"><%= message %></div>
+    <% office.errors.messages_for(:address).each do |message| %>
+      <div class="error"><%= message %></div>
     <% end %>
      <div class="invalid-feedback">
       Por favor, ingrese una direccion.
@@ -29,8 +29,8 @@
  <div class=form-office-field>
     <%= form.label value="Telefono"  , class:'office-label form-label'%><br>
     <%= form.text_field :phone,  required: true, class: 'form-control' %>
-    <% office.errors.full_messages_for(:phone).each do |message| %>
-      <div is-invalid><%= message %></div>
+    <% office.errors.messages_for(:phone).each do |message| %>
+      <div class="error"><%= message %></div>
     <% end %>
       <div class="invalid-feedback">
       Por favor, ingrese un numero de telefono

@@ -1,15 +1,16 @@
-        <p>
-            <strong>Dias</strong>
+        <div>
+        <p class="dasys">
+            Dias:
             <%= schedule.days %>
         </p>
-
-        <p>
-            <strong>Apertura:</strong>
-            <%= schedule.start_at.strftime('%H:%M') %>
+      
+        
+        <p classs="horario">
+            Apertura:   <%= schedule.start_at.strftime('%H:%M') %>
         </p>
 
-        <p>
-            <strong>Cierre:</strong>
+        <p classs="horario">
+          Cierre
             <%= schedule.end_at.strftime('%H:%M') %>
         </p>
 
@@ -19,3 +20,4 @@
                   turbo_confirm: "Esta seguro?"
                 } %>
         </p>
+          </div>
