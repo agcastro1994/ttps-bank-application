@@ -1,23 +1,12 @@
         <div>
-        <p class="dasys">
-            Dias:
-            <%= schedule.days %>
-        </p>
-      
-        
-        <p classs="horario">
-            Apertura:   <%= schedule.start_at.strftime('%H:%M') %>
-        </p>
-
-        <p classs="horario">
-          Cierre
+        <ul class="dasys">
+             <li> <%= schedule.days %>
+    
+            <%= schedule.start_at.strftime('%H:%M') %> a
+          
             <%= schedule.end_at.strftime('%H:%M') %>
-        </p>
+            </li>
+        </ul>
 
-        <p>
-        <%= link_to "Eliminar", [schedule.office, schedule], data: {
-                  turbo_method: :delete,
-                  turbo_confirm: "Esta seguro?"
-                } %>
-        </p>
-          </div>
+      </div>
+   

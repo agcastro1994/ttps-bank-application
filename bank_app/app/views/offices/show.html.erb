@@ -2,15 +2,18 @@
 <div  class="view-header">
 <h5 class="offices"> <%= @office.name %> </h5>
 <div class ="view-button-section">
- <%= link_to edit_office_path(@office) do %>
+<%= turbo_frame_tag @office do %>
+ <%= link_to edit_office_path(@office) do  %>
            <iconify-icon class="edit-office-button" icon="ic:sharp-edit-note"></iconify-icon>
+         
         <% end %> 
-       </td> 
-
-       <td>
-        <%= button_to office_path(@office), data: {turbo_method: :delete, turbo_confirm: "Esta seguro?"} do %>
-          <iconify-icon class="edit-office-button" icon="material-symbols:delete-outline-rounded"></iconify-icon>
+   
+        <%= button_to office_path(@office), method: "DELETE" ,data: {turbo_method: :delete, turbo_confirm: "Esta seguro?"} do %>
+          <iconify-icon class="edit-office-button" icon="material-symbols:delete-outline-rounded"> </iconify-icon>
         <% end %>
+         <%= link_to office_schedule_path(@office.id) do %>
+           <iconify-icon class="edit-office-button"  icon="ic:round-edit-calendar"></iconify-icon>
+        <% end %> 
 </div>
 </div>
 <div class="view-office-section">
@@ -23,13 +26,11 @@
 <span class="info-office-section"> <%= @office.phone %> </span>
 </div>
 
-<div class="view-schedules-section">
-<h4>Horarios</h4>
+<div class="view-schedules-section flex-column">
+<h4>Horario de atencion : </h4>
 <%= render @office.schedules %>
 
 </div>
 </div>
 
-<h3>Agregar horarios:</h3>
 
-<%= render 'schedules/form', office: @office %>

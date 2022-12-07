@@ -207,7 +207,7 @@ body{
         text-decoration: none;
     }
 }
-.view-office-section {
+.view-office-section, .view-schedules-section {
     display: flex;
     width: 60%;
     align-items: first baseline;
@@ -217,3 +217,4 @@ body{
 	margin-left: 2%;
     font-size: 0.95em;
 }
+

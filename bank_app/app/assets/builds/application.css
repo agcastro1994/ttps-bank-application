@@ -37746,7 +37746,7 @@ body h3, body .h3 {
   text-decoration: none;
 }
 
-.view-office-section {
+.view-office-section, .view-schedules-section {
   display: flex;
   width: 60%;
   align-items: first baseline;
