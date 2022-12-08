@@ -1,11 +1,11 @@
 <div class= "d-flex justify-content-center">
-<h3 class = "offices my-5">Sucursales</h3>
+<h3 class = "offices my-5">Usuarios</h3>
 </div>
 
-
 <div class= office-button-top-section>
-<% if Current.user.is_admin?%>
-  <%= button_to "Nueva sucursal",  new_office_path , class: ' btn btn-outline-dark new-office-button' , :method => :get %> 
+<% if Current.user.is_admin?%>  
+<%= button_to "Crear operador",  users_operator_new_path , class: ' mx-3 btn btn-outline-dark new-office-button' , :method => :get %> 
+<%= button_to "Crear admin",  users_admin_new_path , class: 'mx-3 btn btn-outline-dark new-office-button' , :method => :get %> 
 <% end %>
 </div>
 
@@ -14,47 +14,40 @@
 <div class ="list-of-offices">
 <table class = " table table-bordered table-responsive table-hover border-secondary office-table">
 <tr class= "table-dark tr-office">
-    <th>Nombre</th>
+    <th>Email</th>
      <th>Visualizar</th>
-    <% if Current.user.is_admin?%>  
-    <th>Editar</th>    
+     <% if Current.user.is_admin?%>  
+    <th>Editar</th>   
+
     <th>Eliminar</th>
     <% end %>
   </tr>
 
-  <% @offices.each do |office| %>
+  <% @users.each do |user| %>
     <tr>
-       <td> <%= office.name%> </td>
+       <td> <%= user.email%> </td>
        <td>
-        <%= link_to office_path(office) do%>
+        <%= link_to user_path(user) do%>
            <iconify-icon class="edit-office-button" icon="file-icons:qlikview"></iconify-icon>
            <% end %> 
        </td>
-      <% if Current.user.is_admin?%>
+      <% if Current.user.is_admin?%>   
       <td>
-        <%= link_to edit_office_path(office) do %>
+        <%= link_to edit_user_path(user) do %>
            <iconify-icon class="edit-office-button" icon="ic:sharp-edit-note"></iconify-icon>
         <% end %> 
        </td> 
 
-      
-       <td>
-        <%= button_to office_delete_path(office.id), class:'office-button', data: {turbo_method: :delete, turbo_confirm: "Esta seguro?" } do %>
+       <td> 
+        <%= button_to user_delete_path(user.id), class:'office-button', data: {turbo_method: :delete, turbo_confirm: "Esta seguro?" } do %>
           <iconify-icon class="edit-office-button" icon="material-symbols:delete-outline-rounded"></iconify-icon>
         <% end %>
 
-       </td>    
-      <% end %>      
-     
+        </td>          
+     <% end %>
     </tr>
   <% end %>
 
 </table>
 </div>
 </div>
-
-
-
-
-
-
