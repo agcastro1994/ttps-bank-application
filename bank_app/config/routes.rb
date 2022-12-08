@@ -6,6 +6,17 @@ Rails.application.routes.draw do
     resources :schedules
     post "/delete", :to => "offices#destroy", :as => "delete"
   end
+
+  resources :users do
+    post "/delete", :to => "users#destroy", :as => "delete"
+  end
+
+  #Special users routes (operators, admin)
+  get  "/users/admin/new", :to => "users#new_admin"
+  post "/users/admin/new", :to => "users#create_admin", :as => "create_admin"
+  get  "/users/operator/new", :to => "users#new_operator"
+  post "/users/operator/new", :to => "users#create_operator", :as => "create_operator"
+  
   
   #Credential routes. Include change/restore password
   get "password", to: "credentials#edit", as: :change_password

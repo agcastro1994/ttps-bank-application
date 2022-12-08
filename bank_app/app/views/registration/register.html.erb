@@ -1,26 +1,3 @@
 <h1>Registrarse</h1>
 
-<%= form_with model: @user, url: sign_up_path do |form| %>
-  <% if form.object.errors.any? %>
-    <div class="alert alert-danger">
-        <% form.object.errors.messages.each do |fieldname, message| %>
-            <div> <%= message[0] %> </div> 
-        <% end %>
-    </div>    
-  <% end %>
-  <div class="mb-3">
-    <% form.label :email %>
-    <%= form.text_field :email, class:"form-control", placeholder: "Ej: usuario@mail.com" %>
-  </div>
-  <div class="mb-3">
-    <% form.label :password %>
-    <%= form.password_field :password, class:"form-control",  placeholder: "Ingrese su clave" %>
-  </div>
-  <div class="mb-3">
-    <% form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, class:"form-control",  placeholder: "Confirme su clave" %>
-  </div>
-  <div>
-    <%= form.submit value="Registrarse", class:"btn btn-primary" %>
-  </div>
-<% end %>
+<%= render "users/register_user", user: @user, button:"Crear Usuario", path: sign_up_path %>
