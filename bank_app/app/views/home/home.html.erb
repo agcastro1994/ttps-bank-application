@@ -2,17 +2,3 @@
     <h1> Pagina de bienvenida </h1>
 </div>
 
-<% if @user %>
-<div>
-  <p>Usuario: <%= @user.email %> </p>
-</div>
-
-<div>
-  <%= button_to "Cerrar sesion", logout_path, method: :delete, class: "btn btn-secondary" %>
-</div>
-
-<% else %>
-<div>
-  <%= link_to "Iniciar sesion", sign_in_path %>
-</div>
-<% end %>

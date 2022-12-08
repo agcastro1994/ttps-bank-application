@@ -12,8 +12,14 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-     <%= yield %>
+  <body >
+
+   <%= render partial: "shared/navbar"   %>
+  <div class="container">
+   
+    <%= render partial: "shared/flash" %>
+    <%= yield %>
+  </div>
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 
     
