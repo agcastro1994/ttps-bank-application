@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :admin_authorization!
+    before_action :admin_authorization!, :except => [:index, :show]
 
     def new_operator
         @user = User.new
@@ -46,11 +46,14 @@ class UsersController < ApplicationController
     end
 
     def index
-        @users = User.all
+        index_clients_authorization!
+        @users = Current.user.rol == 2 ? User.where(rol: 3) : User.all
     end
 
     def show
         @user = User.find(params[:id])
+        show_clients_authorization! @user  
+
         @office = nil
         if @user.is_operator?
             @office = Office.find(@user.offices_id)
