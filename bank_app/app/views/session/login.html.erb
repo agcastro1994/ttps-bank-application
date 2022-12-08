@@ -9,6 +9,7 @@
   <div class="mb-3">
     <% form.label :password %>
     <%= form.password_field :password, class:"form-control",  placeholder: "Ingrese su clave" %>
+    <%= link_to "Olvide mi clave", password_reset_path %>
   </div>
     <%= form.submit value="Iniciar sesion", class:"btn btn-primary" %>
   </div>

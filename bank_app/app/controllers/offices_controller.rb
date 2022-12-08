@@ -1,4 +1,7 @@
 class OfficesController < ApplicationController
+
+  before_action :admin_authorization!, :except => [:index, :show]
+
   def index
     @offices = Office.all
   end
@@ -43,6 +46,8 @@ class OfficesController < ApplicationController
   end
 
   private
+  
+    #Private method to check the params of the form, to prevent any information injection
     def office_params
       params.require(:office).permit(:name, :address, :phone)
     end

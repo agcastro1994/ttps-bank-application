@@ -3,17 +3,22 @@
 <h5 class="offices"> <%= @office.name %> </h5>
 <div class ="view-button-section">
 <%= turbo_frame_tag @office do %>
- <%= link_to edit_office_path(@office) do  %>
-           <iconify-icon class="edit-office-button" icon="ic:sharp-edit-note"></iconify-icon>
-         
+        <% if Current.user.is_admin?%>
+          <%= link_to edit_office_path(@office) do  %>
+             <iconify-icon class="edit-office-button" icon="ic:sharp-edit-note"></iconify-icon>         
+          <% end %> 
         <% end %> 
-   
-        <%= button_to office_path(@office), method: "DELETE" ,data: {turbo_method: :delete, turbo_confirm: "Esta seguro?"} do %>
-          <iconify-icon class="edit-office-button" icon="material-symbols:delete-outline-rounded"> </iconify-icon>
+        <% if Current.user.is_admin?%>
+          <%= button_to office_delete_path(@office.id), data: {turbo_method: :delete, turbo_confirm: "Esta seguro?"} do %>
+            <iconify-icon class="edit-office-button" icon="material-symbols:delete-outline-rounded"> </iconify-icon>
+          <% end %>
         <% end %>
-         <%= link_to office_schedule_path(@office.id) do %>
-           <iconify-icon class="edit-office-button"  icon="ic:round-edit-calendar"></iconify-icon>
-        <% end %> 
+        <% if Current.user.is_admin?%>
+          <%= link_to office_schedules_path(@office.id) do %>
+            <iconify-icon class="edit-office-button"  icon="ic:round-edit-calendar"></iconify-icon>
+          <% end %> 
+        <% end %>
+  <% end %>
 </div>
 </div>
 <div class="view-office-section">
@@ -25,10 +30,10 @@
 <h4> Telefono de Contacto: </h4>
 <span class="info-office-section"> <%= @office.phone %> </span>
 </div>
-
 <div class="view-schedules-section flex-column">
 <h4>Horario de atencion : </h4>
 <%= render @office.schedules %>
+
 
 </div>
 </div>

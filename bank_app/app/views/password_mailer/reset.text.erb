@@ -1,0 +1,7 @@
+Hola, <%= params[:user].email %>
+
+Usa este link para reiniciar tu clave. Recuerda que el link expira en unos minutos 
+
+si excedes ese tiempo, deberas iniciar el proceso nuevamente
+
+<%= password_reset_edit_url(token: @token) %>
