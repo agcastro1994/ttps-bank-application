@@ -24,6 +24,11 @@ class SchedulesController < ApplicationController
         @office = Office.find(params[:office_id])
         days_params = params[:schedule][:days]
         days_params.shift()
+
+        if empty_form_fields?(params[:schedule])
+          flash[:alert] = "Debes llenar todos los campos"
+          redirect_to office_schedules_path(params[:office_id]), status: :see_other and return
+        end
         
         if is_schedule_valid?(@office, days_params)
           @schedule = @office.schedules.create(days: days_params, start_at: params[:schedule][:start_at], end_at: params[:schedule][:end_at])
@@ -65,7 +70,11 @@ class SchedulesController < ApplicationController
       days_params = params[:schedule][:days]
       days_params.shift()
       
-      puts params[:schedule]
+      if empty_form_fields?(params[:schedule])
+        flash[:alert] = "Debes llenar todos los campos"
+        redirect_to office_schedules_path(params[:office_id]), status: :see_other and return
+      end
+      
       if is_schedule_edition_valid?(@office, @schedule, days_params)
         @schedule.update(days: days_params, start_at: params[:schedule][:start_at], end_at: params[:schedule][:end_at])
         
@@ -79,6 +88,10 @@ class SchedulesController < ApplicationController
     end
 
       private
+
+        def empty_form_fields?(params)
+          return params[:days].empty? || params[:start_at].blank? || params[:end_at].blank?
+        end 
 
         #Private method to check the params of the form, to prevent any information injection
         def schedule_params
