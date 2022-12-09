@@ -18,20 +18,20 @@ class ApplicationController < ActionController::Base
     end
 
     def admin_authorization!
-        is_authorized = Current.user.rol == 1
+        is_authorized = Current.user.rol == "admin"
         raise NotAuthorizedError unless is_authorized        
     end
 
     def index_clients_authorization!
-        is_authorized = Current.user.rol == 2 || Current.user.rol == 1
+        is_authorized = Current.user.rol == "operator" || Current.user.rol == "admin"
         raise NotAuthorizedError unless is_authorized        
     end
 
     def show_clients_authorization! user
-        is_authorized = Current.user.rol == 2 || Current.user.rol == 1
+        is_authorized = Current.user.rol == "operator" || Current.user.rol == "admin"
         can_see_client = true
-        if Current.user.rol == 2
-            can_see_client = user.rol == 3
+        if Current.user.rol == "operator"
+            can_see_client = user.rol == "client"
         end
         raise NotAuthorizedError unless is_authorized && can_see_client       
     end

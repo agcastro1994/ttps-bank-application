@@ -5,7 +5,7 @@ class RegistrationController < ApplicationController
 
     def create_user
         @user = User.new(user_params_validated)
-        @user.rol = 3
+        @user.client!
         if @user.save
             session[:user_id] = @user.id
             redirect_to root_path, notice: "Usuario creado correctamente"
