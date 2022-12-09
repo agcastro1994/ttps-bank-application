@@ -1,5 +1,6 @@
 <div class= "card-office">
 <div class="form-office">
+<h1><%= title %></h1>
 <%= form_with model: @user, url: path do |form| %>
   <% if form.object.errors.any? %>
     <div class="alert alert-danger">

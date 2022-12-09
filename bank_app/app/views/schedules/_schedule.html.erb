@@ -1,10 +1,20 @@
-        <div>
-        <ul class="dasys">
-             <li> <%= schedule.days %>
-    
+      <div>
+        <ul class="days">
+             <li> 
+             <% schedule.days.each do |day| %>
+                <span> <%= day %> </span>
+             <% end %>
+            <span> - </span>
             <%= schedule.start_at.strftime('%H:%M') %> a
           
             <%= schedule.end_at.strftime('%H:%M') %>
+           <% if Current.user.is_admin? %>
+              <%= link_to "Editar", edit_office_schedule_path(@office.id,schedule.id) %>
+              <%= link_to "Eliminar", [schedule.office, schedule], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Esta seguro?"
+                } %>
+           <% end %>
             </li>
         </ul>
 
