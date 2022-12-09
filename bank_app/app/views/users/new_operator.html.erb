@@ -1,0 +1,37 @@
+<h1>Crear usuario operador</h1>
+
+<div class= "card-office">
+<div class="form-office">
+<%= form_with model: @user, url: create_operator_path do |form| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+        <% @user.errors.messages.each do |fieldname, message| %>
+            <div> <%= message[0] %> </div> 
+        <% end %>
+    </div>    
+  <% end %>
+  <div class="mb-3">
+    <% form.label :email %>
+    <%= form.text_field :email, class:"form-control", placeholder: "Ej: usuario@mail.com" %>
+  </div>
+  <div class="mb-3">
+    <% form.label :password %>
+    <%= form.password_field :password, class:"form-control",  placeholder: "Ingrese su clave" %>
+  </div>
+  <div class="mb-3">
+    <% form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, class:"form-control",  placeholder: "Confirme su clave" %>
+  </div>
+
+  <div class="mb-3">
+        <%= form.label :offices_id %>
+        <%= form.select :offices_id, @offices %>
+  </div>
+    <button type="submit"  class="office-button-aproved">
+        Crear operador
+    </button>
+
+    <%= link_to "Cancelar",  users_path , class: 'office-button-cancel' , :method => :get %> 
+<% end %>
+</div>
+</div>

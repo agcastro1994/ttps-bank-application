@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_21_180711) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_08_171418) do
   create_table "offices", force: :cascade do |t|
     t.string "name"
     t.text "address"
@@ -20,14 +20,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_180711) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.string "days"
     t.datetime "start_at"
     t.datetime "end_at"
     t.integer "office_id", null: false
+    t.text "days", default: "--- []\n"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["office_id"], name: "index_schedules_on_office_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "rol"
+    t.integer "offices_id"
+    t.index ["offices_id"], name: "index_users_on_offices_id"
+  end
+
   add_foreign_key "schedules", "offices"
+  add_foreign_key "users", "offices", column: "offices_id"
 end

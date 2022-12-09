@@ -1,10 +1,14 @@
 class OfficesController < ApplicationController
+
+  before_action :admin_authorization!, :except => [:index, :show]
+
   def index
     @offices = Office.all
   end
 
   def show
     @office = Office.find(params[:id])
+    
   end
 
   def new
@@ -28,7 +32,7 @@ class OfficesController < ApplicationController
   def update
     @office = Office.find(params[:id])
 
-    if @office.update(article_params)
+    if @office.update(office_params)
       redirect_to @office
     else
       render :edit, status: :unprocessable_entity
@@ -36,13 +40,15 @@ class OfficesController < ApplicationController
   end
 
   def destroy
-    @office = Office.find(params[:id])
+    @office = Office.find(params[:office_id])
     @office.destroy
 
     redirect_to offices_path, status: :see_other
   end
 
   private
+  
+    #Private method to check the params of the form, to prevent any information injection
     def office_params
       params.require(:office).permit(:name, :address, :phone)
     end

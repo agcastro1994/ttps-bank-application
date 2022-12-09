@@ -1,3 +1,33 @@
-<h1> Editar horario de <%= @office.name %></h1>
+<h1> Editar horario de <%= @office.name %> </h1>
 
-<%= render "form", office: @office, schedule: @schedule %>
+<div>
+    <% @schedule.days.each do |day| %>
+        <span> <%= day %> </span>
+    <% end %>
+    <span> - </span>
+    <%= @schedule.start_at.strftime('%H:%M') %> a
+          
+    <%= @schedule.end_at.strftime('%H:%M') %>
+</div>
+
+<div class="form-office">
+<%= form_with model: [ @office, @office.schedules.build ], url: office_schedule_path(@office.id, @schedule.id), :method => :put  do |form| %>
+   <div class="mb-3">
+    <%= form.select :days, options_for_select(@days, @schedule.days),{:include_blank => false}, :multiple => true, :class => "form-select"%>
+  </div>
+  <div class="mb-3">
+    <%= form.label value="Apertura" %><br>
+    <%= time_field("schedule", "start_at", include_seconds: false) %>
+  </div>
+  <div class="mb-3">
+    <%= form.label value="Cierre" %><br>
+    <%= time_field("schedule", "end_at", include_seconds: false) %>
+  </div>
+  <div class="mb-3">
+    <%= form.submit value="Actualizar", class: "office-button-aproved" %>
+     <%= link_to "Cancelar",  office_schedules_path(@office.id) , class: 'office-button-cancel' , :method => :get %> 
+  </div>
+<% end %>
+</div>
+
+<%# <%= render "form", office: @office, schedule: @schedule %>

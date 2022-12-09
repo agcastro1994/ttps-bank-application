@@ -1,12 +1,60 @@
-<h1>Sucursales</h1>
+<div class= "d-flex justify-content-center">
+<h3 class = "offices my-5">Sucursales</h3>
+</div>
 
-<ul>
+
+<div class= office-button-top-section>
+<% if Current.user.is_admin?%>
+  <%= button_to "Nueva sucursal",  new_office_path , class: ' btn btn-outline-dark new-office-button' , :method => :get %> 
+<% end %>
+</div>
+
+<div class=" card card-table">
+
+<div class ="list-of-offices">
+<table class = " table table-bordered table-responsive table-hover border-secondary office-table">
+<tr class= "table-dark tr-office">
+    <th>Nombre</th>
+     <th>Visualizar</th>
+    <% if Current.user.is_admin?%>  
+    <th>Editar</th>    
+    <th>Eliminar</th>
+    <% end %>
+  </tr>
+
   <% @offices.each do |office| %>
-    <li>
-        <%= link_to office.name, office %>
-    </li>
+    <tr>
+       <td> <%= office.name%> </td>
+       <td>
+        <%= link_to office_path(office) do%>
+           <iconify-icon class="edit-office-button" icon="file-icons:qlikview"></iconify-icon>
+           <% end %> 
+       </td>
+      <% if Current.user.is_admin?%>
+      <td>
+        <%= link_to edit_office_path(office) do %>
+           <iconify-icon class="edit-office-button" icon="ic:sharp-edit-note"></iconify-icon>
+        <% end %> 
+       </td> 
+
+      
+       <td>
+        <%= button_to office_delete_path(office.id), class:'office-button', data: {turbo_method: :delete, turbo_confirm: "Esta seguro?" } do %>
+          <iconify-icon class="edit-office-button" icon="material-symbols:delete-outline-rounded"></iconify-icon>
+        <% end %>
+
+       </td>    
+      <% end %>      
+     
+    </tr>
   <% end %>
-</ul>
+
+</table>
+</div>
+</div>
 
 
-<%= link_to "Nueva sucursal", new_office_path %>
+
+
+
+

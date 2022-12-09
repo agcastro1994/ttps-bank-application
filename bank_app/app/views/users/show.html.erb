@@ -1,0 +1,32 @@
+<div class= "card card-office">
+    <div  class="view-header">
+        <h5 class="offices"> <%= @user.email %> </h5>
+        <div class ="view-button-section">
+            <%= turbo_frame_tag @user do %>
+                <% if @user == Current.user || Current.user.is_admin?%>
+                  <%= link_to edit_user_path(@user) do  %>
+                    <iconify-icon class="edit-office-button" icon="ic:sharp-edit-note"></iconify-icon>         
+                  <% end %> 
+                <% end %> 
+                <% if Current.user.is_admin?%>
+                    <%= button_to user_delete_path(@user.id), data: {turbo_method: :delete, turbo_confirm: "Esta seguro?"} do %>
+                        <iconify-icon class="edit-office-button" icon="material-symbols:delete-outline-rounded"> </iconify-icon>
+                    <% end %>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+    <div class="view-office-section">
+        <h4> Email: </h4>
+        <span class="info-office-section"> <%= @user.email %> </span>
+    </div>
+
+    <% if @user.is_operator?%>
+        <div class="view-office-section">
+            <h4> Sucursal: </h4>
+            <span class="info-office-section"> <%= @office.name %> </span>
+        </div>
+    <% end %>
+
+    </div>
+</div>

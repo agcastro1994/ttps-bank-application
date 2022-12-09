@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg bg-light mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Bank App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <% if Current.user %>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/offices">Sucursales</a>
+        </li>
+      <% end %>
+        <% if Current.user && (Current.user.is_admin? || Current.user.is_operator?) %>
+        <li class="nav-item">
+          <a class="nav-link" href="/users">Usuarios</a>
+        </li>
+        <% end %>
+        <% if Current.user %>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Turnos</a>
+        </li> 
+        <% end %>
+      </ul>
+
+      <ul class="navbar-nav ms-auto mb-lg-0">
+      <% if Current.user %>
+
+        <li class="nav-item">
+            <%= link_to Current.user.email, change_password_path, class: "nav-link"  %>
+        </li>
+         <li class="nav-item">
+            <%= button_to "Cerrar sesion", logout_path, method: :delete, class: "btn btn-secondary" %>
+        </li>
+
+      <% else %>
+        <li class="nav-item">
+            <%= link_to "Iniciar sesion", sign_in_path, class: "nav-link" %>
+        </li>
+         <li class="nav-item">
+            <%= link_to "Registrarse", sign_up_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </div>
+  </div>
+</nav>

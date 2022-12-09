@@ -1,17 +1,19 @@
+<div class="form-office">
 <%= form_with model: [ @office, @office.schedules.build ] do |form| %>
-   <p>
-    <%= form.label value="Dias separados por comas ','" %><br>
-    <%= form.text_field :days %>
-  </p>
-  <p>
+   <div class="mb-3">
+    <%= form.select :days, options_for_select(@days),{:include_blank => false}, :multiple => true, :class => "form-select"%>
+  </div>
+  <div class="mb-3">
     <%= form.label value="Apertura" %><br>
-    <%= form.time_field :start_at %>
-  </p>
-  <p>
+    <%= time_field("schedule", "start_at", include_seconds: false) %>
+  </div>
+  <div class="mb-3">
     <%= form.label value="Cierre" %><br>
-    <%= form.time_field :end_at %>
-  </p>
-  <p>
-    <%= form.submit value="Enviar" %>
-  </p>
+    <%= time_field("schedule", "end_at", include_seconds: false) %>
+  </div>
+  <div class="mb-3">
+    <%= form.submit value="Crear", class: "office-button-aproved" %>
+     <%= link_to "Cancelar",  office_schedules_path(@office.id) , class: 'office-button-cancel' , :method => :get %>
+  </div>
 <% end %>
+</div>

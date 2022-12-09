@@ -1,29 +1,50 @@
-<%= form_with model: office do |form| %>
-  <div>
-    <%= form.label value="Nombre" %><br>
-    <%= form.text_field :name %>
-    <% office.errors.full_messages_for(:name).each do |message| %>
-      <div><%= message %></div>
+<div class= "card-office">
+<div class="form-office">
+<%= form_with model: office, html: { class: "needs-validation", novalidate: true } do |form|    %>
+  <div class=form-office-field>
+    <%= form.label value="Nombre", class:'office-label form-label' %> <br>
+    <%= form.text_field :name , required: true, class: 'form-control'%>
+   
+    <% office.errors.messages_for(:name).each do |message| %>
+      <div class="error"><%= message %></div>
     <% end %>
+
+       <div class="invalid-feedback">
+      Por favor, ingrese un nombre.
+    </div>
   </div>
 
-  <div>
-    <%= form.label value="Direccion" %><br>
-    <%= form.text_area :address %>
-    <% office.errors.full_messages_for(:address).each do |message| %>
-      <div><%= message %></div>
+
+  <div class=form-office-field>
+    <%= form.label value="Direccion"  , class:'office-label form-label'%><br>
+    <%= form.text_area :address , class: 'form-control', required: true %>
+    <% office.errors.messages_for(:address).each do |message| %>
+      <div class="error"><%= message %></div>
     <% end %>
+     <div class="invalid-feedback">
+      Por favor, ingrese una direccion.
+    </div>
   </div>
 
-  <div>
-    <%= form.label value="Telefono" %><br>
-    <%= form.text_field :phone %>
-    <% office.errors.full_messages_for(:phone).each do |message| %>
-      <div><%= message %></div>
+ <div class=form-office-field>
+    <%= form.label value="Telefono"  , class:'office-label form-label'%><br>
+    <%= form.text_field :phone,  required: true, class: 'form-control' %>
+    <% office.errors.messages_for(:phone).each do |message| %>
+      <div class="error"><%= message %></div>
     <% end %>
+      <div class="invalid-feedback">
+      Por favor, ingrese un numero de telefono
+    </div>
   </div>
 
-  <div>
-    <%= form.submit value=button%>
+  <div class="office-button-section">
+  
+  <button type="submit"  class="office-button-aproved">
+    <%= button %>
+  </button>
+
+   <%= link_to "Cancelar",  offices_path , class: 'office-button-cancel' , :method => :get %> 
   </div>
 <% end %>
+</div>
+</div>

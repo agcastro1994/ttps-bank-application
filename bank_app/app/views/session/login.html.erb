@@ -1,0 +1,22 @@
+<div class= "card-office">
+<div class="form-office">
+
+<h1>Iniciar sesion</h1>
+<%= form_with model: @user, url: sign_in_path do |form| %>
+ 
+  <div class="mb-3">
+    <% form.label :email %>
+    <%= form.text_field :email, class:"form-control", placeholder: "Ej: usuario@mail.com" %>
+  </div>
+  <div class="mb-3">
+    <% form.label :password %>
+    <%= form.password_field :password, class:"form-control",  placeholder: "Ingrese su clave" %>
+    <%= link_to "Olvide mi clave", password_reset_path %>
+  </div>
+    <%= form.submit value="Iniciar sesion", class:"btn btn-primary" %>
+    <%= link_to "Cancelar",  root_path , class: 'btn btn-secondary' , :method => :get %> 
+  </div>
+  
+<% end %>
+</div>
+</div>
