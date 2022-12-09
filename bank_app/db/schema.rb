@@ -20,10 +20,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_171418) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.string "days"
     t.datetime "start_at"
     t.datetime "end_at"
     t.integer "office_id", null: false
+    t.text "days", default: "--- []\n"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["office_id"], name: "index_schedules_on_office_id"
