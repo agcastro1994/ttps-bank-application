@@ -5,14 +5,15 @@
   </div>
   <div class="mb-3">
     <%= form.label value="Apertura" %><br>
-    <%= form.time_field :start_at, class:"form-control" %>
+    <%= time_field("schedule", "start_at", include_seconds: false) %>
   </div>
   <div class="mb-3">
     <%= form.label value="Cierre" %><br>
-    <%= form.time_field :end_at, class:"form-control" %>
+    <%= time_field("schedule", "end_at", include_seconds: false) %>
   </div>
   <div class="mb-3">
-    <%= form.submit value="Enviar" %>
+    <%= form.submit value="Crear", class: "office-button-aproved" %>
+     <%= link_to "Cancelar",  office_schedules_path(@office.id) , class: 'office-button-cancel' , :method => :get %>
   </div>
 <% end %>
 </div>

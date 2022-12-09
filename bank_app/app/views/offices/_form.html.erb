@@ -42,9 +42,8 @@
   <button type="submit"  class="office-button-aproved">
     <%= button %>
   </button>
-    <button class="office-button-cancel">
-    Cancelar
-  </button>
+
+   <%= link_to "Cancelar",  offices_path , class: 'office-button-cancel' , :method => :get %> 
   </div>
 <% end %>
 </div>

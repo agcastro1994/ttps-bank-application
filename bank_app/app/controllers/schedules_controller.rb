@@ -20,6 +20,11 @@ class SchedulesController < ApplicationController
       return days
     end
 
+    def new
+      @office = Office.find(params[:office_id])     
+      @days = get_week_days()
+    end
+
     def create
         @office = Office.find(params[:office_id])
         days_params = params[:schedule][:days]
@@ -48,8 +53,7 @@ class SchedulesController < ApplicationController
     end
 
     def index
-      @office = Office.find(params[:office_id])
-      @days = get_week_days()
+      @office = Office.find(params[:office_id])      
     end
 
     def show
@@ -74,7 +78,7 @@ class SchedulesController < ApplicationController
         flash[:alert] = "Debes llenar todos los campos"
         redirect_to office_schedules_path(params[:office_id]), status: :see_other and return
       end
-      
+
       if is_schedule_edition_valid?(@office, @schedule, days_params)
         @schedule.update(days: days_params, start_at: params[:schedule][:start_at], end_at: params[:schedule][:end_at])
         

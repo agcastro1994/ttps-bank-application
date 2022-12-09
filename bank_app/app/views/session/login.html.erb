@@ -14,7 +14,9 @@
     <%= link_to "Olvide mi clave", password_reset_path %>
   </div>
     <%= form.submit value="Iniciar sesion", class:"btn btn-primary" %>
+    <%= link_to "Cancelar",  root_path , class: 'btn btn-secondary' , :method => :get %> 
   </div>
+  
 <% end %>
 </div>
 </div>

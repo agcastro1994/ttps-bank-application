@@ -5,8 +5,8 @@
         <h2> <%= @office.name %>  - Horario de atencion </h2>
         <%= render @office.schedules, office: @office  %>
 
-        <h3>Agregar horarios:</h3>
-        <%= render 'schedules/form', office: @office, days: @days %>
+        <%= button_to "Crear horario",  new_office_schedule_path(@office.id) , class: ' btn btn-outline-dark new-office-button' , :method => :get %> 
 
+         
     </div>
 </div>
