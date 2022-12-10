@@ -1,0 +1,31 @@
+<div class= "card-office">
+<div class="form-office">
+<h2>Elegir Sucursal</h2>
+<%= form_with model: @appointment_office, url: appointment_form_appointment_office_index_path ,local: true, html: { class: "needs-validation", novalidate: true } do |form|    %>
+  <% if @appointment_office.errors.any? %>
+    <div class="alert alert-danger">
+        <% @appointment_office.errors.messages.each do |fieldname, message| %>
+            <div> <%= message[0] %> </div> 
+        <% end %>
+    </div>    
+  <% end %>
+
+  <div class="mb-3">
+        <%= form.label "Sucursal" %>
+        <%= form.select :offices_id, @offices %>
+  </div>
+  
+  <div class="mb-3">
+    <%= form.label value="Motivo" %><br>
+     <%= form.text_field :reason, class:"form-control", placeholder: "Ej: Extravio de tarjeta" %>
+  </div>   
+
+
+    <button type="submit"  class="office-button-aproved">
+        Continuar
+    </button>
+
+    <%= link_to "Cancelar",  root_path , class: 'office-button-cancel' , :method => :get %> 
+<% end %>
+</div>
+</div>
