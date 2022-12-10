@@ -4,13 +4,7 @@ class UsersController < ApplicationController
 
     def new_operator
         @user = User.new
-        @offices = []
-        all_offices = Office.all
-
-        all_offices.each do |office|
-            @offices.append([office.name, office.id])
-        end
-
+        @offices = Office.new.get_offices_names
     end
 
     def create_operator
@@ -19,12 +13,8 @@ class UsersController < ApplicationController
         if @user.save            
             redirect_to root_path, notice: "Usuario creado correctamente"
         else
-            @offices = []
-            all_offices = Office.all
-
-            all_offices.each do |office|
-                @offices.append([office.name, office.id])
-            end
+            @offices = Office.new.get_offices_names
+            
             flash.now[:alert] = "Hubo un error creando su usuario"
             render :new_operator, status: :unprocessable_entity
         end

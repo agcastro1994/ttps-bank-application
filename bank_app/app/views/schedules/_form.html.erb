@@ -5,11 +5,11 @@
   </div>
   <div class="mb-3">
     <%= form.label value="Apertura" %><br>
-    <%= time_field("schedule", "start_at", include_seconds: false) %>
+    <%= form.time_select :start_at, {:minute_step=> 15, :include_seconds=> false} %>
   </div>
   <div class="mb-3">
     <%= form.label value="Cierre" %><br>
-    <%= time_field("schedule", "end_at", include_seconds: false) %>
+   <%= form.time_select :end_at, {:minute_step=> 15, :include_seconds=> false} %>
   </div>
   <div class="mb-3">
     <%= form.submit value="Crear", class: "office-button-aproved" %>

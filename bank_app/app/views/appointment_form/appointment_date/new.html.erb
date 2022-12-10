@@ -1,0 +1,29 @@
+<div class= "card-office">
+<div class="form-office">
+<h2>Elegir fecha</h2>
+
+<div class="mb-3"> <%= @office.name  %> - <%= @office.address  %> </div>
+<div class="mb-3"> Motivo: <%= @reason  %> </div>
+
+<%= form_with model: @appointment_date, url: appointment_form_appointment_date_index_path ,local: true, html: { class: "needs-validation", novalidate: true } do |form|    %>
+  <% if @appointment_date.errors.any? %>
+    <div class="alert alert-danger">
+        <% @appointment_date.errors.messages.each do |fieldname, message| %>
+            <div> <%= message[0] %> </div> 
+        <% end %>
+    </div>    
+  <% end %>
+
+  <div class="mb-3">
+        <%= form.label "Fecha" %>
+        <%= select_date(Time.now, prefix: :appointment_form_appointment_date, prompt: { day: 'Seleccione un dia', month: 'Seleccione mes', year: 'Seleccione un año' }) %>
+  </div>
+
+    <button type="submit"  class="office-button-aproved">
+        Continuar
+    </button>
+
+    <%= link_to "Cancelar",  root_path , class: 'office-button-cancel' , :method => :get %> 
+<% end %>
+</div>
+</div>
