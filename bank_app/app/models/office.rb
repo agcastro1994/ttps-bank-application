@@ -3,7 +3,7 @@ class Office < ApplicationRecord
 
     validates :name, presence: { message: "Disculpe, el nombre de la sucursal no puede estar vacio" }
     validates :address, presence: { message: "Disculpe, la direccion de la sucursal no puede estar vacia" }
-    validates :phone, presence: true, length: { minimum: 10, message: "Disculpe, el nro de tlf debe tener minimo 10 digitos" }
+    validates :phone, presence: true, length: { minimum: 9, message: "Disculpe, el nro de tlf debe tener minimo 9 digitos" }, format: { with: /\A(\+\d{1,2}\s)?\(?\d{2,3}\)?[\s.-]?\d{3,4}[\s.-]?\d{4}/, message: "El numero de telefono no cumple el formato" }
 
     def get_offices_names
         offices_names = []
