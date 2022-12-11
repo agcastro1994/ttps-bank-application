@@ -15,8 +15,8 @@
   <% end %>
 
   <div class="mb-3">
-        <%= form.label "Turno - Harcodeado" %>
-        <%= form.select :hour, options_for_select([["10:00", "10:00"], ["11:00", "11:00"] ]),{:include_blank => false}, :class => "form-select"%>
+        <%= form.label "Turno" %>
+        <%= form.select :hour, options_for_select(@shifts),{:include_blank => false}, :class => "form-select"%>
   </div>
 
     <button type="submit"  class="office-button-aproved">

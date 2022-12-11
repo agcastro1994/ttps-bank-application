@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center">
+<h3 class="offices my-5">Mis turnos</h3>
+</div>
+
+
+<div class="office-button-top-section">
+  <%= button_to "Solicitar turno",  new_appointment_form_appointment_office_path , class: ' btn btn-outline-dark new-office-button' , :method => :get %> 
+</div>
+
+<div class="card card-table">
+
+<div class="list-of-offices">
+<table class="table table-bordered table-responsive table-hover border-secondary office-table">
+<tr class="table-dark tr-office">
+    <th>Fecha y hora</th>
+    <th>Estado</th>    
+     <th>Visualizar</th>    
+  </tr>
+
+  <% @appointments.each do |a| %>
+    <tr>
+       <td> <%= a.date.strftime('%d/%m/%Y')%> -  <%=a.hour.strftime('%H:%M') %> </td>
+        <td> <%= a.status %> </td>
+        <td> 
+        <%= link_to appointment_path(a) do%>
+           <iconify-icon class="edit-office-button" icon="file-icons:qlikview"></iconify-icon>
+           <% end %> 
+       </td>     
+    </tr>
+  <% end %>
+
+</table>
+</div>
+</div>
+
+

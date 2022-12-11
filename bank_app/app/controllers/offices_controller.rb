@@ -41,6 +41,8 @@ class OfficesController < ApplicationController
 
   def destroy
     @office = Office.find(params[:office_id])
+    office_can_be_deleted?(@office)
+    
     @office.destroy
 
     redirect_to offices_path, status: :see_other

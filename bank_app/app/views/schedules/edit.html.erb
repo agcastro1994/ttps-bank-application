@@ -1,4 +1,7 @@
-<h1> Editar horario de <%= @office.name %> </h1>
+<div class= "card-office">
+
+
+<h2> Editar horario de <%= @office.name %> </h2>
 
 <div>
     <% @schedule.days.each do |day| %>
@@ -17,11 +20,11 @@
   </div>
   <div class="mb-3">
     <%= form.label value="Apertura" %><br>
-    <%= time_field("schedule", "start_at", include_seconds: false) %>
+    <%= form.time_select :start_at, {:minute_step=> 15, :include_seconds=> false, :default => {:hour => @schedule.start_at.strftime('%H'), :minute => @schedule.start_at.strftime('%M')}} %>
   </div>
   <div class="mb-3">
     <%= form.label value="Cierre" %><br>
-    <%= time_field("schedule", "end_at", include_seconds: false) %>
+    <%= form.time_select :end_at, {:minute_step=> 15, :include_seconds=> false, :default => {:hour => @schedule.end_at.strftime('%H'), :minute => @schedule.end_at.strftime('%M')}} %>
   </div>
   <div class="mb-3">
     <%= form.submit value="Actualizar", class: "office-button-aproved" %>
@@ -29,5 +32,9 @@
   </div>
 <% end %>
 </div>
+
+
+
+
 
 <%# <%= render "form", office: @office, schedule: @schedule %>

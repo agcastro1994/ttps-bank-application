@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
     def index
         index_clients_authorization!
-        @users = Current.user.rol == "operator" ? User.where(rol: 3) : User.all
+        @users = Current.user.operator? ? User.where(rol: 3) : User.all
     end
 
     def show
