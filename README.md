@@ -24,6 +24,10 @@ Bank Application
 - Run the command: `bundle install`
 In case bundle fails or reported missing run: `gem install bundler` and try again
 
+**Creating test data and db:** 
+- Run the command: `rails db:migrate`
+- Run the command: `rails db:seed`
+
 **Run the app:**
 - In the application folder ( …/bank-app ) run: `bin/rails server`
 Can use: `bin/dev` for a dedicated development server 
