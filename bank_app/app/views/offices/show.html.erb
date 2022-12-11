@@ -2,7 +2,7 @@
 <div  class="view-header">
 <h5 class="offices"> <%= @office.name %> </h5>
 <div class ="view-button-section">
-<%= turbo_frame_tag @office do %>
+<%= turbo_frame_tag @office , class: "d-flex" do %>
         <% if Current.user.admin?%>
           <%= link_to edit_office_path(@office) do  %>
              <iconify-icon class="edit-office-button" icon="ic:sharp-edit-note"></iconify-icon>         

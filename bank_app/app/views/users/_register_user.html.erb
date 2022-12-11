@@ -1,7 +1,8 @@
+<div class="d-flex">
 <div class= "card-office">
 <div class="form-office">
-<h1><%= title %></h1>
-<%= form_with model: @user, url: path do |form| %>
+<h1 class="offices"><%= title %></h1>
+<%= form_with model: @user, url: path , html: { class: "needs-validation", novalidate: true } do |form| %>
   <% if form.object.errors.any? %>
     <div class="alert alert-danger">
         <% form.object.errors.messages.each do |fieldname, message| %>
@@ -11,20 +12,30 @@
   <% end %>
   <div class="mb-3">
     <% form.label :email %>
-    <%= form.text_field :email, class:"form-control", placeholder: "Ej: usuario@mail.com" %>
+    <%= form.text_field :email, required: true,  class:"form-control", placeholder: "Ej: usuario@mail.com" %>
+         <div class="invalid-feedback">
+      Por favor, ingrese un email.
+    </div>
   </div>
   <div class="mb-3">
     <% form.label :password %>
-    <%= form.password_field :password, class:"form-control",  placeholder: "Ingrese su clave" %>
+    <%= form.password_field :password, required: true, class:"form-control",  placeholder: "Ingrese su clave" %>
+         <div class="invalid-feedback">
+      Por favor, ingrese una clave.
+    </div>
   </div>
   <div class="mb-3">
     <% form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, class:"form-control",  placeholder: "Confirme su clave" %>
+    <%= form.password_field :password_confirmation,  required: true, class:"form-control",  placeholder: "Confirme su clave" %>
+          <div class="invalid-feedback">
+      Por favor, ingrese la confirmacion de su clave.
+    </div>
   </div>
     <button type="submit"  class="office-button-aproved">
     <%= button %>
   </button>
   <%= link_to "Cancelar",  cancel_path , class: 'office-button-cancel' , :method => :get %> 
 <% end %>
+</div>
 </div>
 </div>
