@@ -6,7 +6,9 @@ module AppointmentForm
 
             @office = Office.find(session[:appointment_office]['offices_id'])  
             @date =  session[:appointment_date]['date']
-            @reason = session[:appointment_office]['reason']        
+            @reason = session[:appointment_office]['reason']   
+            @schedule = Schedule.new.get_schedule_for_date(@office, @date)
+            @shifts = @appointment_hour.get_shifts_array(@schedule, @date)     
         end
       
         def create

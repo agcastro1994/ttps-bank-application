@@ -19,10 +19,8 @@ Rails.application.routes.draw do
 
   #Appointment routes
   resources :appointments do
-    # get "/office/select", :to => "appointments#get_office"
-    # post "/office/select", :to => "appointments#set_office"
-    # get "/date/select", :to => "appointments#get_date"
-    # post "/date/select", :to => "appointments#set_date"
+    post "/delete", :to => "appointments#destroy", :as => "delete"
+    post "/completed", :to => "appointments#complete", :as => "completed"
   end
 
   namespace :appointment_form do

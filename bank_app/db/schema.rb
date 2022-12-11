@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_10_045410) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_11_023516) do
   create_table "appointments", force: :cascade do |t|
     t.date "date"
     t.datetime "hour"
@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_045410) do
     t.index ["offices_id"], name: "index_users_on_offices_id"
   end
 
-  add_foreign_key "appointments", "offices", column: "offices_id"
+  add_foreign_key "appointments", "offices", column: "offices_id", on_delete: :cascade
   add_foreign_key "appointments", "users", column: "operator_id"
   add_foreign_key "appointments", "users", column: "requester_id"
   add_foreign_key "schedules", "offices"

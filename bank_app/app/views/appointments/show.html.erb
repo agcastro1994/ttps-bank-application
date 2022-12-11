@@ -1,0 +1,63 @@
+<div class= "card card-office">
+<div  class="view-header">
+<h2> <%= @user.email %> </h2>
+<div class ="view-button-section">
+<%= turbo_frame_tag @appointment do %>
+        <% if Current.user.client? && @appointment.requester_id == Current.user.id && @appointment.pending? %>
+          <%= button_to appointment_delete_path(@appointment.id), data: {turbo_method: :delete, turbo_confirm: "Esta seguro?"} do %>
+            <iconify-icon class="edit-office-button" icon="material-symbols:delete-outline-rounded"> </iconify-icon>
+          <% end %>
+        <% end %>
+        
+  <% end %>
+</div>
+</div>
+
+<div class="view-office-section">
+<h4> Sucursal: </h4>
+<span class="info-office-section"> <%= @office.name %> </span>
+</div>
+
+<div class="view-office-section">
+<h4> Direccion: </h4>
+<span class="info-office-section"> <%= @office.address %> </span>
+</div>
+
+<div class="view-schedules-section">
+<h4>Fecha: </h4>
+<span class="info-office-section"> 
+    <%= @appointment.date.strftime('%d/%m/%Y')%> -  <%=@appointment.hour.strftime('%H:%M') %>
+</span>
+</div>
+
+<div class="view-schedules-section">
+<h4>Estado: </h4>
+<span class="info-office-section">  <%= @appointment.status %> </span>
+</div>
+
+<% if !@appointment.done? && Current.user.operator? %>
+<div class="view-schedules-section my-4 flex-column">
+<h4>Comentario: </h4>
+<%= text_area(:appointment, :comment, size: "30x10", class:"form-control") %>
+</div>
+
+<%= button_to "Resuelto", appointment_completed_path(@appointment.id), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Esta seguro?"} %>
+    
+   
+<% end %>
+
+<% if @appointment.done? %>
+<div class="view-schedules-section">
+<h4>Resuelto por: </h4>
+<%= @operator %>
+</div>
+
+<div class="view-schedules-section my-4">
+<h4>Comentario: </h4>
+<%= text_area(:appointment, :comment, size: "30x10", disabled: 'disabled') %>
+</div>
+
+<% end %>
+
+</div>
+</div>

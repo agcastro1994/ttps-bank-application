@@ -16,9 +16,15 @@
           <a class="nav-link" href="/users">Usuarios</a>
         </li>
         <% end %>
-        <% if Current.user %>
+        <% if Current.user && Current.user.client? %>
         <li class="nav-item">
           <a class="nav-link" href="/appointment_form/appointment_office/new">Solicitar turno</a>
+        </li> 
+        <% end %>
+
+        <% if Current.user && Current.user.client? %>
+        <li class="nav-item">
+          <a class="nav-link" href="/appointments">Mis turnos</a>
         </li> 
         <% end %>
       </ul>

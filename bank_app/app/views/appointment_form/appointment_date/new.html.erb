@@ -14,10 +14,16 @@
     </div>    
   <% end %>
 
+  <%# <div class="mb-3">
+        <%= form.label "Fecha" %>
+   <%#     <%= select_date(Time.now, prefix: :appointment_form_appointment_date, prompt: { day: 'Seleccione un dia', month: 'Seleccione mes', year: 'Seleccione un año' }) %>
+ <%# </div> %>
+
   <div class="mb-3">
         <%= form.label "Fecha" %>
-        <%= select_date(Time.now, prefix: :appointment_form_appointment_date, prompt: { day: 'Seleccione un dia', month: 'Seleccione mes', year: 'Seleccione un año' }) %>
+        <%= date_field("appointment_form_appointment_date", "date", min: Date.today, max: Date.today + 30.days) %>
   </div>
+  
 
     <button type="submit"  class="office-button-aproved">
         Continuar

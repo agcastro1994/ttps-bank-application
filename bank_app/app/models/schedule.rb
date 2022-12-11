@@ -11,6 +11,28 @@ class Schedule < ApplicationRecord
   validates :start_at, presence: {message: "Debe seleccionar una hora de inicio"}
   validates :end_at, presence: {message: "Debe seleccionar una hora de fin"}
 
+  def weekday_hash
+    weekday = {
+        0 => "Domingo",
+        1 => "Lunes",
+        2 => "Martes",
+        3 => "Miercoles",
+        4 => "Jueves",
+        5 => "Viernes",
+        6 => "Sabado"        
+    }  
+    return weekday
+  end    
+
+  #Get schedule from an office for the selected day
+  def get_schedule_for_date(office_id, date)
+    #Receiving a date, determine the weekday string name. The name is in app language (Spanish)
+    hash = self.weekday_hash
+    weekday = hash[Date.parse(date).wday]
+    
+    schedule = Schedule.where('office_id = ? and days LIKE ?', office_id, "%#{weekday}%").first
+  end
+
   #Model methods to determine if a schedule can be edited or not
   #Ask if the schedule is the same for all the days of the week -> return valid and exit
   #Ask if the days of the update are a subset of the original dates -> return valid and exit

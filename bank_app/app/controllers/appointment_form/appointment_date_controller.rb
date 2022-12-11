@@ -1,6 +1,6 @@
 module AppointmentForm
     class AppointmentDateController < ApplicationController
-
+        include AppointmentForm
         def new
             @appointment_date = AppointmentDate.new
 
@@ -14,14 +14,32 @@ module AppointmentForm
             # The valid? method is also called just the same
             # as for any Active Record object.
             if @appointment_date.valid?
-              date = Date.civil(params[:appointment_form_appointment_date][:year].to_i, params[:appointment_form_appointment_date][:month].to_i, params[:appointment_form_appointment_date][:day].to_i)
-              #The value are temporarily stored in the session.
-       
-              session[:appointment_date] = {
-                'date' => date                
-              }
+              
+              office_id = session[:appointment_office]['offices_id']
+              date = params[:appointment_form_appointment_date][:date]             
+              puts date
+              if @appointment_date.user_has_appointment_for_date?(Current.user.id, date, office_id)
+                flash.now[:alert] = "Ud ya tiene un turno para la fecha seleccionada"
+                @office = Office.find(session[:appointment_office]['offices_id'])  
+                @reason = session[:appointment_office]['reason'] 
+                return render :new, status: :unprocessable_entity
+              end
+
+              available = @appointment_date.date_availability(office_id, date)
+
+              if available
+                #The value are temporarily stored in the session.  
+                session[:appointment_date] = {
+                  'date' => date                
+                }
       
-              redirect_to new_appointment_form_appointment_hour_path
+                redirect_to new_appointment_form_appointment_hour_path
+              else
+                flash.now[:alert] = "La fecha seleccionada no tiene turnos disponibles"
+                @office = Office.find(session[:appointment_office]['offices_id'])  
+                @reason = session[:appointment_office]['reason'] 
+                render :new, status: :unprocessable_entity
+              end
             else              
               flash.now[:alert] = "Hubo un error al elegir fecha"
               @office = Office.find(session[:appointment_office]['offices_id'])  
@@ -33,7 +51,7 @@ module AppointmentForm
         private
 
         def appointment_date_params
-            params.required(:appointment_form_appointment_date).permit(:day, :year, :month)
+            params.required(:appointment_form_appointment_date).permit(:date)
         end
 
     end
