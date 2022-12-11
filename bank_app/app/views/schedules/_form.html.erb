@@ -1,15 +1,24 @@
 <div class="form-office">
-<%= form_with model: [ @office, @office.schedules.build ] do |form| %>
+<%= form_with model: [ @office, @office.schedules.build ] ,html: { class: "needs-validation", novalidate: true } do |form| %>
    <div class="mb-3">
-    <%= form.select :days, options_for_select(@days),{:include_blank => false}, :multiple => true, :class => "form-select"%>
+    <%= form.select :days, options_for_select(@days),{:include_blank => false}, :multiple => true, required: true, :class => "form-select"%>
+      <div class="invalid-feedback">
+      Por favor, selecione un dia.
+    </div>
   </div>
   <div class="mb-3">
     <%= form.label value="Apertura" %><br>
-    <%= form.time_select :start_at, {:minute_step=> 15, :include_seconds=> false} %>
+    <%= form.time_select :start_at, {:minute_step=> 15, :include_seconds=> false} , required: true %>
+     <div class="invalid-feedback">
+      Por favor, selecione la hora de apertura.
+    </div>
   </div>
   <div class="mb-3">
     <%= form.label value="Cierre" %><br>
-   <%= form.time_select :end_at, {:minute_step=> 15, :include_seconds=> false} %>
+   <%= form.time_select :end_at, {:minute_step=> 15, :include_seconds=> false, required: true} %>
+   <div class="invalid-feedback">
+      Por favor, selecione la hora de cierre.
+    </div>
   </div>
   <div class="mb-3">
     <%= form.submit value="Crear", class: "office-button-aproved" %>

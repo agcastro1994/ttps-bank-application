@@ -1,22 +1,41 @@
-<div class= "card-office">
-<div class="form-office">
+<div class="d-flex">
+  <div class= "d-flex  credit-svg mx-5">
+    <%= render inline: Rails.root.join('public/login.svg').read %>
+    <h4 class= "offices my-5"> Somos tu solucion Financiera!</h4>
+  </div>
 
-<h1>Iniciar sesion</h1>
-<%= form_with model: @user, url: sign_in_path do |form| %>
+  <div class= "card-office mx-5">
+    <div class="form-office">
+
+      <h2 class= "offices login">Iniciar sesion</h2>
+      <%= form_with model: @user, url: sign_in_path ,  html: { class: "needs-validation", novalidate: true } do |form| %>
  
-  <div class="mb-3">
-    <% form.label :email %>
-    <%= form.text_field :email, class:"form-control", placeholder: "Ej: usuario@mail.com" %>
-  </div>
-  <div class="mb-3">
-    <% form.label :password %>
-    <%= form.password_field :password, class:"form-control",  placeholder: "Ingrese su clave" %>
-    <%= link_to "Olvide mi clave", password_reset_path %>
-  </div>
-    <%= form.submit value="Iniciar sesion", class:"btn btn-primary" %>
-    <%= link_to "Cancelar",  root_path , class: 'btn btn-secondary' , :method => :get %> 
-  </div>
+
+      <div class="form-office-field">
+         <% form.label :email %>
+         <%= form.text_field :email, class:"form-control",required: true,  placeholder: "Ej: usuario@mail.com" %>
+         <div class="invalid-feedback">
+            Por favor, ingrese un email.
+        </div>
+      </div>
+
+      <div class="form-office-field">
+        <% form.label :password %>
+        <%= form.password_field :password, class:"form-control", required: true,  placeholder: "Ingrese su clave" %>
+        <div class="invalid-feedback">
+          Por favor, ingrese una clave.
+        </div>
+        <%= link_to "Olvide mi clave", password_reset_path %>
+      </div>
+   
+      <div class="office-button-section">
   
-<% end %>
-</div>
+        <%= form.submit value="Iniciar sesion", class:"office-button-aproved" %>
+        <%= link_to "Cancelar",  root_path , class: 'office-button-cancel' , :method => :get %> 
+      </div>
+  
+  
+      <% end %>
+    </div>
+  </div>
 </div>

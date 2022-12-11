@@ -37758,3 +37758,17 @@ body h3, body .h3 {
   margin-left: 2%;
   font-size: 0.95em;
 }
+
+.home {
+  height: 75vh;
+}
+
+.credit-svg {
+  justify-content: center;
+  flex-direction: column;
+  margin: 4%;
+}
+
+.login {
+  font-size: 2em;
+}
