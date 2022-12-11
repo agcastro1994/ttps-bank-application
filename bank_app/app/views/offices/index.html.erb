@@ -4,7 +4,7 @@
 
 
 <div class= office-button-top-section>
-<% if Current.user.is_admin?%>
+<% if Current.user.admin?%>
   <%= button_to "Nueva sucursal",  new_office_path , class: ' btn btn-outline-dark new-office-button' , :method => :get %> 
 <% end %>
 </div>
@@ -16,7 +16,7 @@
 <tr class= "table-dark tr-office">
     <th>Nombre</th>
      <th>Visualizar</th>
-    <% if Current.user.is_admin?%>  
+    <% if Current.user.admin?%>  
     <th>Editar</th>    
     <th>Eliminar</th>
     <% end %>
@@ -30,7 +30,7 @@
            <iconify-icon class="edit-office-button" icon="file-icons:qlikview"></iconify-icon>
            <% end %> 
        </td>
-      <% if Current.user.is_admin?%>
+      <% if Current.user.admin?%>
       <td>
         <%= link_to edit_office_path(office) do %>
            <iconify-icon class="edit-office-button" icon="ic:sharp-edit-note"></iconify-icon>

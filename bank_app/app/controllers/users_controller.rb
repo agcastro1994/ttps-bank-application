@@ -4,27 +4,17 @@ class UsersController < ApplicationController
 
     def new_operator
         @user = User.new
-        @offices = []
-        all_offices = Office.all
-
-        all_offices.each do |office|
-            @offices.append([office.name, office.id])
-        end
-
+        @offices = Office.new.get_offices_names
     end
 
     def create_operator
         @user = User.new(operator_params_validated)
-        @user.rol = 2
+        @user.operator!
         if @user.save            
             redirect_to root_path, notice: "Usuario creado correctamente"
         else
-            @offices = []
-            all_offices = Office.all
-
-            all_offices.each do |office|
-                @offices.append([office.name, office.id])
-            end
+            @offices = Office.new.get_offices_names
+            
             flash.now[:alert] = "Hubo un error creando su usuario"
             render :new_operator, status: :unprocessable_entity
         end
@@ -36,7 +26,7 @@ class UsersController < ApplicationController
 
     def create_admin
         @user = User.new(user_params_validated)
-        @user.rol = 1
+        @user.admin!
         if @user.save            
             redirect_to root_path, notice: "Usuario creado correctamente"
         else
@@ -47,7 +37,7 @@ class UsersController < ApplicationController
 
     def index
         index_clients_authorization!
-        @users = Current.user.rol == 2 ? User.where(rol: 3) : User.all
+        @users = Current.user.operator? ? User.where(rol: 3) : User.all
     end
 
     def show
@@ -55,7 +45,7 @@ class UsersController < ApplicationController
         show_clients_authorization! @user  
 
         @office = nil
-        if @user.is_operator?
+        if @user.operator?
             @office = Office.find(@user.offices_id)
         end
     end
@@ -72,7 +62,7 @@ class UsersController < ApplicationController
     
     def update
         @user = User.find(params[:id])
-        update_params = @user.rol == 2 ? operator_params_validated : user_params_validated
+        update_params = @user.rol == "operator" ? operator_params_validated : user_params_validated
         puts update_params
         if @user.update_column(:email, update_params[:email]) && @user.update_column(:offices_id, update_params[:offices_id])
 

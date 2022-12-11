@@ -3,7 +3,7 @@
 </div>
 
 <div class= office-button-top-section>
-<% if Current.user.is_admin?%>  
+<% if Current.user.admin?%>  
 <%= button_to "Crear operador",  users_operator_new_path , class: ' mx-3 btn btn-outline-dark new-office-button' , :method => :get %> 
 <%= button_to "Crear admin",  users_admin_new_path , class: 'mx-3 btn btn-outline-dark new-office-button' , :method => :get %> 
 <% end %>
@@ -16,7 +16,7 @@
 <tr class= "table-dark tr-office">
     <th>Email</th>
      <th>Visualizar</th>
-     <% if Current.user.is_admin?%>  
+     <% if Current.user.admin?%>  
     <th>Editar</th>   
 
     <th>Eliminar</th>
@@ -31,7 +31,7 @@
            <iconify-icon class="edit-office-button" icon="file-icons:qlikview"></iconify-icon>
            <% end %> 
        </td>
-      <% if Current.user.is_admin?%>   
+      <% if Current.user.admin?%>   
       <td>
         <%= link_to edit_user_path(user) do %>
            <iconify-icon class="edit-office-button" icon="ic:sharp-edit-note"></iconify-icon>

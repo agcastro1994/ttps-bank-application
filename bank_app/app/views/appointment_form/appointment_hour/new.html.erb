@@ -1,0 +1,29 @@
+<div class= "card-office">
+<div class="form-office">
+<h2>Elegir fecha</h2>
+
+<div class="mb-3"> <%= @office.name  %> - <%= @office.address  %> </div>
+<div class="mb-3"> Motivo: <%= @reason  %> </div>
+<div class="mb-3"> <%= @date  %> </div>
+<%= form_with model: @appointment_hour, url: appointment_form_appointment_hour_index_path ,local: true, html: { class: "needs-validation", novalidate: true } do |form|    %>
+  <% if @appointment_hour.errors.any? %>
+    <div class="alert alert-danger">
+        <% @appointment_hour.errors.messages.each do |fieldname, message| %>
+            <div> <%= message[0] %> </div> 
+        <% end %>
+    </div>    
+  <% end %>
+
+  <div class="mb-3">
+        <%= form.label "Turno" %>
+        <%= form.select :hour, options_for_select(@shifts),{:include_blank => false}, :class => "form-select"%>
+  </div>
+
+    <button type="submit"  class="office-button-aproved">
+        Solicitar
+    </button>
+
+    <%= link_to "Cancelar",  root_path , class: 'office-button-cancel' , :method => :get %> 
+<% end %>
+</div>
+</div>

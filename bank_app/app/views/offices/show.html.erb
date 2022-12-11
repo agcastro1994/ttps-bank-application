@@ -3,17 +3,17 @@
 <h5 class="offices"> <%= @office.name %> </h5>
 <div class ="view-button-section">
 <%= turbo_frame_tag @office do %>
-        <% if Current.user.is_admin?%>
+        <% if Current.user.admin?%>
           <%= link_to edit_office_path(@office) do  %>
              <iconify-icon class="edit-office-button" icon="ic:sharp-edit-note"></iconify-icon>         
           <% end %> 
         <% end %> 
-        <% if Current.user.is_admin?%>
+        <% if Current.user.admin?%>
           <%= button_to office_delete_path(@office.id), data: {turbo_method: :delete, turbo_confirm: "Esta seguro?"} do %>
             <iconify-icon class="edit-office-button" icon="material-symbols:delete-outline-rounded"> </iconify-icon>
           <% end %>
         <% end %>
-        <% if Current.user.is_admin?%>
+        <% if Current.user.admin?%>
           <%= link_to office_schedules_path(@office.id) do %>
             <iconify-icon class="edit-office-button"  icon="ic:round-edit-calendar"></iconify-icon>
           <% end %> 

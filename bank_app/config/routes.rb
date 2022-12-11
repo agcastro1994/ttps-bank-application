@@ -16,6 +16,18 @@ Rails.application.routes.draw do
   post "/users/admin/new", :to => "users#create_admin", :as => "create_admin"
   get  "/users/operator/new", :to => "users#new_operator"
   post "/users/operator/new", :to => "users#create_operator", :as => "create_operator"
+
+  #Appointment routes
+  resources :appointments do
+    post "/delete", :to => "appointments#destroy", :as => "delete"
+    post "/completed", :to => "appointments#complete", :as => "completed"
+  end
+
+  namespace :appointment_form do
+    resources :appointment_office, only: %i[new create]
+    resources :appointment_date, only: %i[new create]
+    resources :appointment_hour, only: %i[new create]
+  end
   
   
   #Credential routes. Include change/restore password

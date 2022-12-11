@@ -8,7 +8,7 @@
             <%= schedule.start_at.strftime('%H:%M') %> a
           
             <%= schedule.end_at.strftime('%H:%M') %>
-           <% if Current.user.is_admin? %>
+           <% if Current.user.admin? %>
               <%= link_to "Editar", edit_office_schedule_path(@office.id,schedule.id) %>
               <%= link_to "Eliminar", [schedule.office, schedule], data: {
                   turbo_method: :delete,

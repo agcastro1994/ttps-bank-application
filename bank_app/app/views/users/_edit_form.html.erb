@@ -13,7 +13,7 @@
     <%= form.text_field :email, class:"form-control", placeholder: "Ej: usuario@mail.com" %>
   </div>
   
-  <% if @user.rol == 2%>
+  <% if @user.rol == "operator" %>
    <div class="mb-3">
         <%= form.label :offices_id %>
         <%= form.select :offices_id, offices %>

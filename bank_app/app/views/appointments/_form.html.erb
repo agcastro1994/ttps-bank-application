@@ -1,0 +1,44 @@
+<!-- Possibly deprecated -->
+
+<div class= "card-office">
+<div class="form-office">
+<%= form_with model: appointment, html: { class: "needs-validation", novalidate: true } do |form|    %>
+  <% if appointment.errors.any? %>
+    <div class="alert alert-danger">
+        <% appointment.errors.messages.each do |fieldname, message| %>
+            <div> <%= message[0] %> </div> 
+        <% end %>
+    </div>    
+  <% end %>
+
+  <div class="mb-3">
+        <%= form.label "Sucursal" %>
+        <%= form.select :offices_id, offices %>
+  </div>
+  
+  <div class="mb-3">
+    <%= form.label value="Fecha" %><br>
+    <%= select_date(Time.now, prompt: { day: 'Seleccione un dia', month: 'Seleccione mes', year: 'Seleccione un año' }) %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label value="Hora" %><br>
+    <%= form.time_select :hour, {:minute_step=> 30, :include_seconds=> false} %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label value="Motivo" %><br>
+     <%= form.text_field :reason, class:"form-control", placeholder: "Ej: Extravio de tarjeta" %>
+  </div>
+
+    
+
+
+    <button type="submit"  class="office-button-aproved">
+        Solicitar
+    </button>
+
+    <%= link_to "Cancelar",  users_path , class: 'office-button-cancel' , :method => :get %> 
+<% end %>
+</div>
+</div>
