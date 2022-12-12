@@ -19,8 +19,10 @@ class OfficesController < ApplicationController
     @office = Office.new(office_params)
 
     if @office.save
+      flash[:notice] = "La sucursal creada exitosamente"
       redirect_to @office
     else
+      flash.now[:alert] = "La sucursal no pudo ser creada"
       render :new, status: :unprocessable_entity
     end
   end
@@ -35,6 +37,7 @@ class OfficesController < ApplicationController
     if @office.update(office_params)
       redirect_to @office
     else
+      flash.now[:alert] = "La sucursal no pudo ser editada"
       render :edit, status: :unprocessable_entity
     end
   end
