@@ -37,26 +37,31 @@
 
 <% if !@appointment.done? && Current.user.operator? %>
 <div class="view-schedules-section my-4 flex-column">
-<h4>Comentario: </h4>
-<%= text_area(:appointment, :comment, size: "30x10", class:"form-control") %>
-</div>
+<%= form_with model: @appointment, url: appointment_completed_path(@appointment.id) , html: { class: "needs-validation", novalidate: true } do |form|    %>
+  <%= form.label "Comentario" %>
+  <%= text_area(:appointment, :comment, size: "30x10", class:"form-control") %>
 
-<%= button_to "Resuelto", appointment_completed_path(@appointment.id), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Esta seguro?"} %>
-    
+
+    <button type="submit"  class="office-button-aproved my-5">
+        Resolver
+    </button>
+
+    <%= link_to "Cancelar",  root_path , class: 'office-button-cancel my-5' , :method => :get %> 
+<% end %>    
    
 <% end %>
 
 <% if @appointment.done? %>
-<div class="view-schedules-section">
+
+<div class="view-schedules-section flex-column my-4">
 <h4>Resuelto por: </h4>
 <%= @operator %>
+
+<h4 class="my-4">Comentario: </h4>
+<%= text_area(:appointment, :comment, size: "30x10", disabled: 'disabled', class:"form-control my-2") %>
 </div>
 
-<div class="view-schedules-section my-4">
-<h4>Comentario: </h4>
-<%= text_area(:appointment, :comment, size: "30x10", disabled: 'disabled') %>
-</div>
-
+<%= link_to "Volver",  appointments_path , class: 'office-button-cancel my-5' , :method => :get %> 
 <% end %>
 
 </div>

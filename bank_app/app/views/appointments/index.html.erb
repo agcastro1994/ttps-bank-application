@@ -13,8 +13,13 @@
 <table class="table table-bordered table-responsive table-hover border-secondary office-table">
 <tr class="table-dark tr-office">
     <th>Fecha y hora</th>
-    <th>Estado</th>    
-     <th>Visualizar</th>    
+    <th>Estado</th> 
+    <% if Current.user.client? %>       
+     <th>Visualizar</th>
+    <% end %>
+    <% if Current.user.operator? %>    
+     <th>Accion</th> 
+     <% end %>
   </tr>
 
   <% @appointments.each do |a| %>
@@ -23,9 +28,17 @@
         <td> <%= a.status %> </td>
         <td> 
         <%= link_to appointment_path(a) do%>
+          <% if Current.user.client? || (Current.user.operator? && a.done?)%>
            <iconify-icon class="edit-office-button" icon="file-icons:qlikview"></iconify-icon>
+          <% end %>
+
+          <% if Current.user.operator? && a.pending?%>
+           <iconify-icon class="edit-office-button" icon="mdi:bell-check-outline"></iconify-icon>
+          <% end %>
+
            <% end %> 
-       </td>     
+       </td>  
+    
     </tr>
   <% end %>
 

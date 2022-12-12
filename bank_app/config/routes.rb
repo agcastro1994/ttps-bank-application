@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   #Appointment routes
   resources :appointments do
     post "/delete", :to => "appointments#destroy", :as => "delete"
-    post "/completed", :to => "appointments#complete", :as => "completed"
+    patch "/completed", :to => "appointments#complete", :as => "completed"
   end
 
   namespace :appointment_form do

@@ -27,6 +27,12 @@
           <a class="nav-link" href="/appointments">Mis turnos</a>
         </li> 
         <% end %>
+
+        <% if Current.user && Current.user.operator? %>
+        <li class="nav-item">
+          <a class="nav-link" href="/appointments">Tomar turnos</a>
+        </li> 
+        <% end %>
       </ul>
 
       <ul class="navbar-nav ms-auto mb-lg-0">
