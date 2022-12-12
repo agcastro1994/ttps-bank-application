@@ -37605,6 +37605,7 @@ body h3, body .h3 {
   display: flex;
   flex-direction: column;
   width: 80%;
+  margin: auto;
 }
 
 .office-label {
@@ -37769,6 +37770,30 @@ body h3, body .h3 {
   margin: 4%;
 }
 
+.bank-svg {
+  justify-content: center;
+  flex-direction: column;
+}
+.bank-svg svg {
+  width: 80%;
+  margin: auto;
+}
+
 .login {
   font-size: 2em;
+}
+
+.logo {
+  letter-spacing: 0.125em;
+  font-size: 2.8em;
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+  color: #e99332;
+}
+
+.navbar-nav {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-size: 1.15em;
 }

@@ -1,13 +1,15 @@
 
 
 <% if flash[:notice] %>
-<div class="alert alert-info mt-4" role="alert">
+<div class="alert alert-success mt-4" role="alert">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="currentColor" d="M18 2a16 16 0 1 0 16 16A16 16 0 0 0 18 2Zm0 30a14 14 0 1 1 14-14a14 14 0 0 1-14 14Z" class="clr-i-outline clr-i-outline-path-1"/><path fill="currentColor" d="M28 12.1a1 1 0 0 0-1.41 0l-11.1 11.05l-6-6A1 1 0 0 0 8 18.53L15.49 26L28 13.52a1 1 0 0 0 0-1.42Z" class="clr-i-outline clr-i-outline-path-2"/><path fill="none" d="M0 0h36v36H0z"/></svg>
     <%= flash[:notice] %>
 </div>
 <% end %>
 
 <% if flash[:alert] %>
-<div class="alert alert-warning mt-4" role="alert">
+<div class="alert alert-danger mt-4" role="alert">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8zm-1-5h2v2h-2zm0-8h2v6h-2z"/></svg>
     <%= flash[:alert] %>
 </div>
 <% end %>
