@@ -66,6 +66,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	width: 80%;
+	margin: auto;
 }
 
 .office-label {
@@ -230,7 +231,31 @@ body{
 	margin:4%;
 }
 
+.bank-svg{
+justify-content: center;
+flex-direction: column;
+ svg{
+	width: 80%;
+	margin: auto;
+}
+
+}
 
 .login{
 	font-size: 2em;
+}
+
+.logo{
+	letter-spacing: 0.125em;
+	font-size: 2.8em;
+	font-weight: 900;
+	font-family: $typography;
+	color:$orange;
+}
+
+.navbar-nav{ 
+	font-family: $typography;
+	font-weight: 600;
+	letter-spacing: 0.10em;
+	font-size: 1.15em;
 }

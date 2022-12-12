@@ -1,8 +1,7 @@
 class AppointmentsController < ApplicationController
 
     def new
-        #@appointment = Appointment.new
-        #@offices = Office.new.get_offices_names     
+
     end
 
     def index
@@ -24,6 +23,20 @@ class AppointmentsController < ApplicationController
         end
     end
 
+    def complete      
+
+        @appointment = Appointment.find(params[:appointment_id])
+        can_see_appointment?(@appointment)
+        if @appointment.update(complete_appointment_params_validated)
+            @appointment.done!
+            @appointment.update_column(:operator_id, Current.user.id)
+            redirect_to appointments_path
+        else
+            flash.now[:alert] = "El turno no pudo ser resuelto"
+            render :show, status: :unprocessable_entity
+        end
+    end
+
     def destroy
         @appointment = Appointment.find(params[:appointment_id])
         @appointment.cancelled!
@@ -33,18 +46,7 @@ class AppointmentsController < ApplicationController
     end
 
     def create
-        # @appointment = Appointment.new(appointment_params_validated)
-        # @appointment.requester_id = Current.user.id
-        # @appointment.pending!    
 
-        # if @appointment.save            
-        #     redirect_to root_path, notice: "Turno solicitado correctamente"
-        # else
-        #     @offices = Office.new.get_offices_names
-            
-        #     flash.now[:alert] = "Hubo un error solicitando su turno"
-        #     render :new, status: :unprocessable_entity
-        # end
     end
 
 
@@ -53,6 +55,10 @@ class AppointmentsController < ApplicationController
 
     def appointment_params_validated
         params.required(:appointment).permit(:offices_id, :date, :hour, :reason)
+    end
+
+    def complete_appointment_params_validated
+        params.required(:appointment).permit(:comment)
     end
 
 end
